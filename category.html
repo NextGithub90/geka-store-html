@@ -7,9 +7,10 @@
     <title>Kategori Produk | Geka Store</title>
     <meta name="description"
         content="Jelajahi semua kategori produk Geka Store, dari Lapis Talas Bogor hingga Bolu Susu Madu.">
-    <link rel="shortcut icon" href="./asset/fav.png" type="image/png">
+    <link rel="shortcut icon" href="./asset/logo.png?v=2" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./products-data.js"></script>
+    <script src="./cart.js"></script>
     <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] } } } }</script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,31 +52,30 @@
                     <img id="navbar-logo" class="h-12 w-auto object-contain transition-all duration-300"
                         src="./asset/logo.png" alt="Logo Geka">
                 </a>
-                <nav class="hidden md:flex space-x-8 items-center text-sm font-semibold text-slate-600">
-                    <a href="index.html" class="hover:text-emerald-600 transition-colors duration-200">Home</a>
-                    <a href="about.html" class="hover:text-emerald-600 transition-colors duration-200">About</a>
-                    <a href="store.html" class="hover:text-emerald-600 transition-colors duration-200">Store</a>
-                    <a href="category.html"
-                        class="text-emerald-600 font-bold transition-colors duration-200">Category</a>
-                    <a href="news.html" class="hover:text-emerald-600 transition-colors duration-200">Articles</a>
-                    <a href="contact.html" class="hover:text-emerald-600 transition-colors duration-200">Contact</a>
+                                <nav class="hidden md:flex space-x-8 items-center text-sm font-semibold text-slate-600">
+                    <a href="index.html" class="hover:text-slate-800 transition-colors duration-200">Home</a>
+                    <a href="about.html" class="hover:text-slate-800 transition-colors duration-200">About</a>
+                    <a href="store.html" class="hover:text-slate-800 transition-colors duration-200">Sale</a>
+                    <a href="category.html" class="text-slate-800 font-bold transition-colors duration-200">Category</a>
                     <div class="border-l border-slate-200 pl-4 ml-2">
-                        <a href="store.html"
-                            class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-600 relative hover:bg-slate-100 hover:text-emerald-600 transition-all"
-                            title="Keranjang">
-                            <i class="bi bi-bag text-base"></i>
-                            <span
-                                class="absolute -top-1.5 -right-1.5 bg-emerald-500 text-white text-[9px] rounded-full flex items-center justify-center font-bold px-1 min-w-[18px]">0</span>
+                        <a href="cart.html"
+                            class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-600 relative hover:bg-slate-100 hover:text-slate-800 transition-all"
+                            title="Keranjang"><i class="bi bi-bag text-base"></i>
+                            <span class="cart-badge absolute -top-1.5 -right-1.5 bg-slate-800 text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold px-1 min-w-[18px]">0</span>
                         </a>
                     </div>
                 </nav>
-                <div class="flex md:hidden items-center gap-3">
-                    <button id="menu-toggle" type="button"
-                        class="text-slate-700 hover:text-emerald-600 focus:outline-none text-2xl transition-colors duration-200"
-                        aria-label="Toggle menu">
-                        <i class="bi bi-list"></i>
-                    </button>
-                </div>
+                            <div class="flex md:hidden items-center gap-3">
+                <a href="cart.html"
+                    class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-600 relative hover:bg-slate-100 transition-all"
+                    title="Keranjang"><i class="bi bi-bag text-base"></i>
+                    <span class="cart-badge absolute -top-1.5 -right-1.5 bg-slate-800 text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold px-1 min-w-[18px]">0</span>
+                </a>
+                <button id="menu-toggle" type="button"
+                    class="w-10 h-10 flex items-center justify-center rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-slate-800 hover:border-slate-300 transition-all focus:outline-none shadow-sm"
+                    aria-label="Toggle menu">
+                    <i class="bi bi-list text-xl"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -94,17 +94,17 @@
             </div>
             <div class="px-4 py-4 space-y-2 flex-1 font-medium text-slate-700">
                 <a href="index.html"
-                    class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">Home</a>
+                    class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all">Home</a>
                 <a href="about.html"
-                    class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">About</a>
+                    class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all">About</a>
                 <a href="store.html"
-                    class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">Store</a>
+                    class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all">Store</a>
                 <a href="category.html"
-                    class="block px-4 py-3 rounded-xl bg-emerald-50 text-emerald-600 font-bold">Category</a>
+                    class="block px-4 py-3 rounded-xl bg-slate-100 text-slate-800 font-bold">Category</a>
                 <a href="news.html"
-                    class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">Articles</a>
+                    class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all">Articles</a>
                 <a href="contact.html"
-                    class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">Contact</a>
+                    class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all">Contact</a>
             </div>
         </div>
     </div>
@@ -113,10 +113,10 @@
     <div id="view-categories">
         <section class="bg-white border-b border-slate-100 py-10 px-4 sm:px-6 lg:px-8">
             <div class="max-w-7xl mx-auto">
-                <span class="text-xs font-extrabold tracking-widest text-emerald-600 uppercase">Product
+                <span class="text-xs font-extrabold tracking-widest text-slate-800 uppercase">Product
                     Collections</span>
                 <h1 class="text-3xl sm:text-4xl font-black text-slate-900 mt-2">Jelajahi <span
-                        class="text-emerald-600">Kategori</span></h1>
+                        class="text-slate-800">Kategori</span></h1>
                 <p class="text-slate-500 mt-2 max-w-lg">Pilih kategori produk favorit Anda di bawah ini untuk melihat
                     koleksi terbaik yang kami sediakan khusus untuk Anda.</p>
             </div>
@@ -133,13 +133,13 @@
     <div id="view-products" class="hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <button id="btn-back"
-                class="inline-flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-emerald-600 transition-colors mb-6">
+                class="inline-flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-slate-800 transition-colors mb-6">
                 <i class="bi bi-arrow-left"></i> KEMBALI KE KATEGORI
             </button>
             <div class="bg-white border border-slate-100 rounded-2xl p-6 mb-8">
-                <span class="text-xs font-extrabold tracking-widest text-emerald-600 uppercase">Katalog Filtered</span>
+                <span class="text-xs font-extrabold tracking-widest text-slate-800 uppercase">Katalog Filtered</span>
                 <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">Kategori: <span
-                        id="active-category-title" class="text-emerald-600"></span></h2>
+                        id="active-category-title" class="text-slate-800"></span></h2>
                 <p class="text-slate-400 text-sm mt-1">Menampilkan semua koleksi produk terbaik dalam kategori ini.</p>
             </div>
             <div id="products-grid" class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"></div>
@@ -170,12 +170,12 @@
             <div class="space-y-3">
                 <h4 class="text-white font-semibold text-sm tracking-wider uppercase mb-3">Get In Touch</h4>
                 <ul class="space-y-2 text-sm">
-                    <li class="flex items-start gap-2"><i class="bi bi-geo-alt text-emerald-500 mt-0.5"></i><span>Jl.
+                    <li class="flex items-start gap-2"><i class="bi bi-geo-alt text-slate-700 mt-0.5"></i><span>Jl.
                             Jalur Utama No. 123, Tangerang, Banten</span></li>
-                    <li class="flex items-center gap-2"><i class="bi bi-whatsapp text-emerald-500"></i><a
+                    <li class="flex items-center gap-2"><i class="bi bi-whatsapp text-slate-700"></i><a
                             href="https://wa.me/6287885038485" target="_blank"
                             class="hover:text-white transition-colors">+62 878-8503-8485</a></li>
-                    <li class="flex items-center gap-2"><i class="bi bi-envelope text-emerald-500"></i><a
+                    <li class="flex items-center gap-2"><i class="bi bi-envelope text-slate-700"></i><a
                             href="mailto:info@perusahaan.com"
                             class="hover:text-white transition-colors">info@perusahaan.com</a></li>
                 </ul>
@@ -190,9 +190,9 @@
 
     <!-- FLOATING WA -->
     <a href="https://wa.me/6287885038485" target="_blank"
-        class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-emerald-500 text-white rounded-full shadow-lg hover:bg-emerald-600 transition-all duration-300 group hover:scale-110"
+        class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-slate-800 text-white rounded-full shadow-lg hover:bg-slate-900 transition-all duration-300 group hover:scale-110"
         aria-label="Chat via WhatsApp">
-        <span class="absolute inset-0 rounded-full bg-emerald-500/40 animate-ping group-hover:animate-none"></span>
+        <span class="absolute inset-0 rounded-full bg-slate-800/40 animate-ping group-hover:animate-none"></span>
         <i class="bi bi-whatsapp text-2xl relative z-10"></i>
     </a>
 
@@ -277,10 +277,10 @@
                         <a href="product-detail.html?id=${p.id}" class="col-span-2 inline-flex items-center justify-center gap-1 border border-slate-200 hover:bg-slate-50 text-slate-700 text-[10px] sm:text-xs font-bold py-2 rounded-xl transition-colors">
                             <i class="bi bi-info-circle"></i> Detail
                         </a>
-                        <a href="https://wa.me/6287885038485?text=${waMsg}" target="_blank" class="col-span-2 inline-flex items-center justify-center gap-1 bg-emerald-500 hover:bg-emerald-600 text-white text-[10px] sm:text-xs font-bold py-2 rounded-xl transition-colors shadow-sm">
+                        <a href="https://wa.me/6287885038485?text=${waMsg}" target="_blank" class="col-span-2 inline-flex items-center justify-center gap-1 bg-slate-800 hover:bg-slate-900 text-white text-[10px] sm:text-xs font-bold py-2 rounded-xl transition-colors shadow-sm">
                             <i class="bi bi-whatsapp"></i> Chat
                         </a>
-                        <button class="col-span-1 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-500 text-emerald-600 hover:text-white transition-all flex items-center justify-center">
+                        <button class="col-span-1 py-2 rounded-xl bg-slate-100 hover:bg-slate-800 text-slate-800 hover:text-white transition-all flex items-center justify-center">
                             <i class="bi bi-cart-plus"></i>
                         </button>
                     </div>

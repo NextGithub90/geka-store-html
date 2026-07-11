@@ -7,9 +7,10 @@
     <title>Bolu Susu Khas Lembang | Oleh-Oleh Favorit & Lezat</title>
     <meta name="description"
         content="Bolu Susu Khas Lembang dengan rasa autentik, lembut, dan lezat. Tersedia berbagai varian rasa, cocok untuk oleh-oleh dan keluarga.">
-    <link rel="shortcut icon" href="./asset/fav.png" type="image/png">
+    <link rel="shortcut icon" href="./asset/logo.png?v=2" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./products-data.js"></script>
+    <script src="./cart.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -64,70 +65,31 @@
                     </a>
                 </div>
 
-                <nav class="hidden md:flex space-x-8 items-center text-sm font-semibold text-slate-600">
-                    <a href="index.html" class="text-emerald-600 font-bold transition-colors duration-200">Home</a>
-                    <a href="about.html" class="hover:text-emerald-600 transition-colors duration-200">About</a>
-                    <a href="store.html" class="hover:text-emerald-600 transition-colors duration-200">Store</a>
-                    <a href="category.html" class="hover:text-emerald-600 transition-colors duration-200">Category</a>
-                    <a href="news.html" class="hover:text-emerald-600 transition-colors duration-200">Articles</a>
-                    <a href="contact.html" class="hover:text-emerald-600 transition-colors duration-200">Contact</a>
-
+                                <nav class="hidden md:flex space-x-8 items-center text-sm font-semibold text-slate-600">
+                    <a href="index.html" class="text-slate-800 font-bold transition-colors duration-200">Home</a>
+                    <a href="about.html" class="hover:text-slate-800 transition-colors duration-200">About</a>
+                    <a href="store.html" class="hover:text-slate-800 transition-colors duration-200">Sale</a>
+                    <a href="category.html" class="hover:text-slate-800 transition-colors duration-200">Category</a>
                     <div class="border-l border-slate-200 pl-4 ml-2">
-                        <a href="store.html"
-                            class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-600 relative hover:bg-slate-100 hover:text-emerald-600 transition-all"
-                            title="Lihat Keranjang Anda">
-                            <i class="bi bi-bag text-base"></i>
-                            <span id="global-cart-badge-desktop"
-                                class="absolute -top-1.5 -right-1.5 bg-emerald-500 text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold px-1 min-w-[18px]">0</span>
+                        <a href="cart.html"
+                            class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-600 relative hover:bg-slate-100 hover:text-slate-800 transition-all"
+                            title="Keranjang"><i class="bi bi-bag text-base"></i>
+                            <span class="cart-badge absolute -top-1.5 -right-1.5 bg-slate-800 text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold px-1 min-w-[18px]">0</span>
                         </a>
                     </div>
                 </nav>
 
-                <div class="flex md:hidden items-center gap-3">
-                    <a href="store.html"
-                        class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-600 relative hover:bg-slate-100 transition-all">
-                        <i class="bi bi-bag text-base"></i>
-                        <span id="global-cart-badge-mobile"
-                            class="absolute -top-1.5 -right-1.5 bg-emerald-500 text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold px-1 min-w-[18px]">0</span>
-                    </a>
-
-                    <button id="menu-toggle" type="button"
-                        class="text-slate-700 hover:text-emerald-600 focus:outline-none text-2xl transition-colors duration-200"
-                        aria-label="Toggle menu">
-                        <i class="bi bi-list"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Sidebar Menu -->
-        <div id="sidebar-menu" class="fixed inset-0 z-[100] pointer-events-none invisible transition-all duration-300">
-            <div id="sidebar-backdrop"
-                class="absolute inset-0 bg-slate-900/40 opacity-0 transition-opacity duration-300 ease-in-out z-[99]">
-            </div>
-            <div id="sidebar-panel"
-                class="absolute inset-y-0 left-0 max-w-xs w-full bg-white shadow-xl flex flex-col transform -translate-x-full transition-transform duration-300 ease-in-out pointer-events-auto z-[100]">
-                <div class="px-6 py-5 flex items-center justify-between border-b border-slate-100">
-                    <img class="h-8 w-auto" src="./asset/logo.png" alt="Logo">
-                    <button id="menu-close" type="button"
-                        class="text-slate-500 hover:text-rose-600 text-xl focus:outline-none">
-                        <i class="bi bi-x-lg"></i>
-                    </button>
-                </div>
-                <div class="px-4 py-4 space-y-2 flex-1 font-medium text-slate-700">
-                    <a href="index.html"
-                        class="block px-4 py-3 rounded-xl bg-emerald-50 text-emerald-600 font-bold">Home</a>
-                    <a href="about.html"
-                        class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">About</a>
-                    <a href="store.html"
-                        class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">Store</a>
-                    <a href="category.html"
-                        class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">Category</a>
-                    <a href="news.html"
-                        class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">Articles</a>
-                    <a href="contact.html"
-                        class="block px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">Contact</a>
-                </div>
+                            <div class="flex md:hidden items-center gap-3">
+                <a href="cart.html"
+                    class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-600 relative hover:bg-slate-100 transition-all"
+                    title="Keranjang"><i class="bi bi-bag text-base"></i>
+                    <span class="cart-badge absolute -top-1.5 -right-1.5 bg-slate-800 text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold px-1 min-w-[18px]">0</span>
+                </a>
+                <button id="menu-toggle" type="button"
+                    class="w-10 h-10 flex items-center justify-center rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-slate-800 hover:border-slate-300 transition-all focus:outline-none shadow-sm"
+                    aria-label="Toggle menu">
+                    <i class="bi bi-list text-xl"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -144,11 +106,11 @@
                             class="hero-slide w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center py-8 px-8 sm:px-16 min-h-[340px] md:min-h-[380px] lg:min-h-[420px]">
                             <div class="space-y-5 text-left max-w-xl">
                                 <span
-                                    class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 text-emerald-600 text-xs font-bold rounded-lg uppercase tracking-wider">
+                                    class="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 text-slate-800 text-xs font-bold rounded-lg uppercase tracking-wider">
                                     <span class="relative flex h-2 w-2">
                                         <span
-                                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-600 opacity-75"></span>
+                                        <span class="relative inline-flex rounded-full h-2 w-2 bg-slate-800"></span>
                                     </span>
                                     Kategori Pilihan
                                 </span>
@@ -159,14 +121,14 @@
                                     dengan varian rasa baru</p>
                                 <div class="pt-2">
                                     <a href="store.html?category=Lapis%20Talas%20Bogor"
-                                        class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-lg shadow-emerald-600/10 transition-all transform hover:-translate-y-0.5">
+                                        class="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-xl text-xs font-bold shadow-lg shadow-slate-800/10 transition-all transform hover:-translate-y-0.5">
                                         Lihat Koleksi <i class="bi bi-arrow-right"></i>
                                     </a>
                                 </div>
                             </div>
                             <div class="hidden md:flex relative group justify-center md:justify-end items-center p-4">
                                 <div
-                                    class="absolute w-80 h-80 lg:w-[380px] lg:h-[380px] bg-gradient-to-tr from-emerald-500/10 to-transparent rounded-full blur-2xl">
+                                    class="absolute w-80 h-80 lg:w-[380px] lg:h-[380px] bg-gradient-to-tr from-slate-800/10 to-transparent rounded-full blur-2xl">
                                 </div>
                                 <div
                                     class="relative w-80 h-80 lg:w-[380px] lg:h-[380px] rounded-2xl overflow-hidden border border-slate-100 bg-white shadow-xl shadow-slate-200/50">
@@ -181,11 +143,11 @@
                             class="hero-slide w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center py-8 px-8 sm:px-16 min-h-[340px] md:min-h-[380px] lg:min-h-[420px]">
                             <div class="space-y-5 text-left max-w-xl">
                                 <span
-                                    class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 text-emerald-600 text-xs font-bold rounded-lg uppercase tracking-wider">
+                                    class="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 text-slate-800 text-xs font-bold rounded-lg uppercase tracking-wider">
                                     <span class="relative flex h-2 w-2">
                                         <span
-                                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-600 opacity-75"></span>
+                                        <span class="relative inline-flex rounded-full h-2 w-2 bg-slate-800"></span>
                                     </span>
                                     Terlaris
                                 </span>
@@ -196,14 +158,14 @@
                                     istimewa di setiap gigitan.</p>
                                 <div class="pt-2">
                                     <a href="store.html?category=Bolu%20Susu%20Madu"
-                                        class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-lg shadow-emerald-600/10 transition-all transform hover:-translate-y-0.5">
+                                        class="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-xl text-xs font-bold shadow-lg shadow-slate-800/10 transition-all transform hover:-translate-y-0.5">
                                         Lihat Koleksi <i class="bi bi-arrow-right"></i>
                                     </a>
                                 </div>
                             </div>
                             <div class="hidden md:flex relative group justify-center md:justify-end items-center p-4">
                                 <div
-                                    class="absolute w-80 h-80 lg:w-[380px] lg:h-[380px] bg-gradient-to-tr from-emerald-500/10 to-transparent rounded-full blur-2xl">
+                                    class="absolute w-80 h-80 lg:w-[380px] lg:h-[380px] bg-gradient-to-tr from-slate-800/10 to-transparent rounded-full blur-2xl">
                                 </div>
                                 <div
                                     class="relative w-80 h-80 lg:w-[380px] lg:h-[380px] rounded-2xl overflow-hidden border border-slate-100 bg-white shadow-xl shadow-slate-200/50">
@@ -218,11 +180,11 @@
                             class="hero-slide w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center py-8 px-8 sm:px-16 min-h-[340px] md:min-h-[380px] lg:min-h-[420px]">
                             <div class="space-y-5 text-left max-w-xl">
                                 <span
-                                    class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 text-emerald-600 text-xs font-bold rounded-lg uppercase tracking-wider">
+                                    class="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 text-slate-800 text-xs font-bold rounded-lg uppercase tracking-wider">
                                     <span class="relative flex h-2 w-2">
                                         <span
-                                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-600 opacity-75"></span>
+                                        <span class="relative inline-flex rounded-full h-2 w-2 bg-slate-800"></span>
                                     </span>
                                     Rasa Baru
                                 </span>
@@ -233,14 +195,14 @@
                                     untuk teman minum teh.</p>
                                 <div class="pt-2">
                                     <a href="store.html?category=Pie%20Susu"
-                                        class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-lg shadow-emerald-600/10 transition-all transform hover:-translate-y-0.5">
+                                        class="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-xl text-xs font-bold shadow-lg shadow-slate-800/10 transition-all transform hover:-translate-y-0.5">
                                         Lihat Koleksi <i class="bi bi-arrow-right"></i>
                                     </a>
                                 </div>
                             </div>
                             <div class="hidden md:flex relative group justify-center md:justify-end items-center p-4">
                                 <div
-                                    class="absolute w-80 h-80 lg:w-[380px] lg:h-[380px] bg-gradient-to-tr from-emerald-500/10 to-transparent rounded-full blur-2xl">
+                                    class="absolute w-80 h-80 lg:w-[380px] lg:h-[380px] bg-gradient-to-tr from-slate-800/10 to-transparent rounded-full blur-2xl">
                                 </div>
                                 <div
                                     class="relative w-80 h-80 lg:w-[380px] lg:h-[380px] rounded-2xl overflow-hidden border border-slate-100 bg-white shadow-xl shadow-slate-200/50">
@@ -255,11 +217,11 @@
                             class="hero-slide w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center py-8 px-8 sm:px-16 min-h-[340px] md:min-h-[380px] lg:min-h-[420px]">
                             <div class="space-y-5 text-left max-w-xl">
                                 <span
-                                    class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 text-emerald-600 text-xs font-bold rounded-lg uppercase tracking-wider">
+                                    class="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 text-slate-800 text-xs font-bold rounded-lg uppercase tracking-wider">
                                     <span class="relative flex h-2 w-2">
                                         <span
-                                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-600 opacity-75"></span>
+                                        <span class="relative inline-flex rounded-full h-2 w-2 bg-slate-800"></span>
                                     </span>
                                     Favorit Keluarga
                                 </span>
@@ -270,14 +232,14 @@
                                     pilihan isian yang lezat.</p>
                                 <div class="pt-2">
                                     <a href="store.html?category=Bakpia%20Khas%20Jogja"
-                                        class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-lg shadow-emerald-600/10 transition-all transform hover:-translate-y-0.5">
+                                        class="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-xl text-xs font-bold shadow-lg shadow-slate-800/10 transition-all transform hover:-translate-y-0.5">
                                         Lihat Koleksi <i class="bi bi-arrow-right"></i>
                                     </a>
                                 </div>
                             </div>
                             <div class="hidden md:flex relative group justify-center md:justify-end items-center p-4">
                                 <div
-                                    class="absolute w-80 h-80 lg:w-[380px] lg:h-[380px] bg-gradient-to-tr from-emerald-500/10 to-transparent rounded-full blur-2xl">
+                                    class="absolute w-80 h-80 lg:w-[380px] lg:h-[380px] bg-gradient-to-tr from-slate-800/10 to-transparent rounded-full blur-2xl">
                                 </div>
                                 <div
                                     class="relative w-80 h-80 lg:w-[380px] lg:h-[380px] rounded-2xl overflow-hidden border border-slate-100 bg-white shadow-xl shadow-slate-200/50">
@@ -292,7 +254,7 @@
             </div>
             <div class="flex justify-center items-center mt-5">
                 <div id="slider-dots" class="flex justify-center gap-2">
-                    <button class="slider-dot h-2 w-8 bg-emerald-600 rounded-full transition-all duration-300"
+                    <button class="slider-dot h-2 w-8 bg-slate-800 rounded-full transition-all duration-300"
                         data-index="0"></button>
                     <button
                         class="slider-dot h-2 w-2 bg-slate-300 hover:bg-slate-400 rounded-full transition-all duration-300"
@@ -397,10 +359,10 @@
                 <div class="space-y-4">
                     <div class="flex items-center justify-between border-b border-slate-100 pb-3">
                         <h3
-                            class="text-lg sm:text-xl font-black text-slate-900 relative pl-3 border-l-4 border-emerald-500">
+                            class="text-lg sm:text-xl font-black text-slate-900 relative pl-3 border-l-4 border-slate-800">
                             Lapis Talas Bogor</h3>
                         <a href="store.html?category=Lapis%20Talas%20Bogor"
-                            class="text-xs font-bold text-slate-400 hover:text-emerald-600 transition-colors">Lihat
+                            class="text-xs font-bold text-slate-400 hover:text-slate-800 transition-colors">Lihat
                             Semua &rarr;</a>
                     </div>
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -414,7 +376,7 @@
                                 </div>
                                 <div class="mt-3">
                                     <h3
-                                        class="font-bold text-slate-800 text-xs sm:text-sm md:text-base line-clamp-2 hover:text-emerald-600 transition-colors capitalize leading-snug">
+                                        class="font-bold text-slate-800 text-xs sm:text-sm md:text-base line-clamp-2 hover:text-slate-800 transition-colors capitalize leading-snug">
                                         Lapis Talas Bogor Original</h3>
                                     <p
                                         class="text-[10px] sm:text-[11px] text-slate-400 mt-1 line-clamp-1 sm:line-clamp-2">
@@ -428,17 +390,15 @@
                                     </div>
                                     <span class="text-[9px] sm:text-[10px] text-slate-400 font-medium">Stok: 50</span>
                                 </div>
-                                <div class="grid grid-cols-5 gap-1 mt-3">
+                                <div class="grid grid-cols-2 gap-1 mt-3">
                                     <a href="product-detail.html?id=lapis-talas-original"
                                         class="col-span-2 inline-flex items-center justify-center gap-1 border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 text-[10px] sm:text-xs font-bold py-2 px-1 rounded-xl transition-colors"><i
                                             class="bi bi-info-circle"></i> Detail</a><a
                                         href="https://wa.me/6287885038485?text=Halo%20Admin,%20saya%20tertarik%20memesan%20Lapis%20Talas%20Bogor%20Original"
                                         target="_blank"
-                                        class="col-span-2 inline-flex items-center justify-center gap-1 bg-emerald-500 hover:bg-emerald-600 text-white text-[10px] sm:text-xs font-bold py-2 px-1 rounded-xl transition-colors shadow-sm shadow-emerald-200"><i
+                                        class="col-span-2 inline-flex items-center justify-center gap-1 bg-slate-800 hover:bg-slate-900 text-white text-[10px] sm:text-xs font-bold py-2 px-1 rounded-xl transition-colors shadow-sm shadow-slate-300"><i
                                             class="bi bi-whatsapp"></i> Chat</a>
-                                    <button
-                                        class="col-span-1 w-full py-2 rounded-xl bg-emerald-50 hover:bg-emerald-500 text-emerald-600 hover:text-white transition-all flex items-center justify-center shadow-sm"><i
-                                            class="bi bi-cart-plus"></i></button>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -452,7 +412,7 @@
                                 </div>
                                 <div class="mt-3">
                                     <h3
-                                        class="font-bold text-slate-800 text-xs sm:text-sm md:text-base line-clamp-2 hover:text-emerald-600 transition-colors capitalize leading-snug">
+                                        class="font-bold text-slate-800 text-xs sm:text-sm md:text-base line-clamp-2 hover:text-slate-800 transition-colors capitalize leading-snug">
                                         Lapis Talas Bogor Brownies</h3>
                                     <p
                                         class="text-[10px] sm:text-[11px] text-slate-400 mt-1 line-clamp-1 sm:line-clamp-2">
@@ -465,17 +425,15 @@
                                     </div>
                                     <span class="text-[9px] sm:text-[10px] text-slate-400 font-medium">Stok: 45</span>
                                 </div>
-                                <div class="grid grid-cols-5 gap-1 mt-3">
+                                <div class="grid grid-cols-2 gap-1 mt-3">
                                     <a href="product-detail.html?id=lapis-talas-brownies"
                                         class="col-span-2 inline-flex items-center justify-center gap-1 border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 text-[10px] sm:text-xs font-bold py-2 px-1 rounded-xl transition-colors"><i
                                             class="bi bi-info-circle"></i> Detail</a><a
                                         href="https://wa.me/6287885038485?text=Halo%20Admin,%20saya%20tertarik%20memesan%20Lapis%20Talas%20Bogor%20Brownies"
                                         target="_blank"
-                                        class="col-span-2 inline-flex items-center justify-center gap-1 bg-emerald-500 hover:bg-emerald-600 text-white text-[10px] sm:text-xs font-bold py-2 px-1 rounded-xl transition-colors shadow-sm shadow-emerald-200"><i
+                                        class="col-span-2 inline-flex items-center justify-center gap-1 bg-slate-800 hover:bg-slate-900 text-white text-[10px] sm:text-xs font-bold py-2 px-1 rounded-xl transition-colors shadow-sm shadow-slate-300"><i
                                             class="bi bi-whatsapp"></i> Chat</a>
-                                    <button
-                                        class="col-span-1 w-full py-2 rounded-xl bg-emerald-50 hover:bg-emerald-500 text-emerald-600 hover:text-white transition-all flex items-center justify-center shadow-sm"><i
-                                            class="bi bi-cart-plus"></i></button>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -486,10 +444,10 @@
                 <div class="space-y-4">
                     <div class="flex items-center justify-between border-b border-slate-100 pb-3">
                         <h3
-                            class="text-lg sm:text-xl font-black text-slate-900 relative pl-3 border-l-4 border-emerald-500">
+                            class="text-lg sm:text-xl font-black text-slate-900 relative pl-3 border-l-4 border-slate-800">
                             Bolu Susu Madu</h3>
                         <a href="store.html?category=Bolu%20Susu%20Madu"
-                            class="text-xs font-bold text-slate-400 hover:text-emerald-600 transition-colors">Lihat
+                            class="text-xs font-bold text-slate-400 hover:text-slate-800 transition-colors">Lihat
                             Semua &rarr;</a>
                     </div>
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -503,7 +461,7 @@
                                 </div>
                                 <div class="mt-3">
                                     <h3
-                                        class="font-bold text-slate-800 text-xs sm:text-sm md:text-base line-clamp-2 hover:text-emerald-600 transition-colors capitalize leading-snug">
+                                        class="font-bold text-slate-800 text-xs sm:text-sm md:text-base line-clamp-2 hover:text-slate-800 transition-colors capitalize leading-snug">
                                         Bolu Susu Madu Spesial</h3>
                                     <p
                                         class="text-[10px] sm:text-[11px] text-slate-400 mt-1 line-clamp-1 sm:line-clamp-2">
@@ -516,17 +474,15 @@
                                     </div>
                                     <span class="text-[9px] sm:text-[10px] text-slate-400 font-medium">Stok: 60</span>
                                 </div>
-                                <div class="grid grid-cols-5 gap-1 mt-3">
+                                <div class="grid grid-cols-2 gap-1 mt-3">
                                     <a href="product-detail.html?id=bolu-susu-madu-coklat"
                                         class="col-span-2 inline-flex items-center justify-center gap-1 border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 text-[10px] sm:text-xs font-bold py-2 px-1 rounded-xl transition-colors"><i
                                             class="bi bi-info-circle"></i> Detail</a><a
                                         href="https://wa.me/6287885038485?text=Halo%20Admin,%20saya%20tertarik%20memesan%20Bolu%20Susu%20Madu%20Spesial"
                                         target="_blank"
-                                        class="col-span-2 inline-flex items-center justify-center gap-1 bg-emerald-500 hover:bg-emerald-600 text-white text-[10px] sm:text-xs font-bold py-2 px-1 rounded-xl transition-colors shadow-sm shadow-emerald-200"><i
+                                        class="col-span-2 inline-flex items-center justify-center gap-1 bg-slate-800 hover:bg-slate-900 text-white text-[10px] sm:text-xs font-bold py-2 px-1 rounded-xl transition-colors shadow-sm shadow-slate-300"><i
                                             class="bi bi-whatsapp"></i> Chat</a>
-                                    <button
-                                        class="col-span-1 w-full py-2 rounded-xl bg-emerald-50 hover:bg-emerald-500 text-emerald-600 hover:text-white transition-all flex items-center justify-center shadow-sm"><i
-                                            class="bi bi-cart-plus"></i></button>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -538,11 +494,11 @@
 
     <!-- FEATURES SECTION -->
     <section class="py-20 bg-slate-900 text-white relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-0 right-0 w-80 h-80 bg-slate-800/10 rounded-full blur-3xl pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-5 space-y-4">
-                    <span class="text-emerald-400 font-bold uppercase tracking-wider text-xs">Keunggulan Kami</span>
+                    <span class="text-slate-600 font-bold uppercase tracking-wider text-xs">Keunggulan Kami</span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Kelezatan Autentik Bolu Susu Lembang
                     </h2>
                     <p class="text-slate-400 font-medium leading-relaxed">Kami selalu menjaga kualitas rasa dan
@@ -550,9 +506,9 @@
                 </div>
                 <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div
-                        class="p-6 bg-slate-800/50 rounded-2xl border border-slate-800 hover:border-emerald-500/30 transition-all group">
+                        class="p-6 bg-slate-800/50 rounded-2xl border border-slate-800 hover:border-slate-800/30 transition-all group">
                         <div
-                            class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-4 font-bold group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                            class="w-12 h-12 rounded-xl bg-slate-800/10 text-slate-600 flex items-center justify-center text-xl mb-4 font-bold group-hover:bg-slate-800 group-hover:text-white transition-all">
                             <i class="bi bi-award"></i>
                         </div>
                         <h3 class="font-bold text-lg mb-2">Bahan Premium</h3>
@@ -560,9 +516,9 @@
                             berkualitas tinggi agar rasa susu lebih padat dan lezat.</p>
                     </div>
                     <div
-                        class="p-6 bg-slate-800/50 rounded-2xl border border-slate-800 hover:border-emerald-500/30 transition-all group">
+                        class="p-6 bg-slate-800/50 rounded-2xl border border-slate-800 hover:border-slate-800/30 transition-all group">
                         <div
-                            class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-4 font-bold group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                            class="w-12 h-12 rounded-xl bg-slate-800/10 text-slate-600 flex items-center justify-center text-xl mb-4 font-bold group-hover:bg-slate-800 group-hover:text-white transition-all">
                             <i class="bi bi-clock-history"></i>
                         </div>
                         <h3 class="font-bold text-lg mb-2">Fresh From The Oven</h3>
@@ -570,9 +526,9 @@
                             menjamin kelembutan tekstur bolu saat sampai di tangan Anda.</p>
                     </div>
                     <div
-                        class="p-6 bg-slate-800/50 rounded-2xl border border-slate-800 hover:border-emerald-500/30 transition-all group">
+                        class="p-6 bg-slate-800/50 rounded-2xl border border-slate-800 hover:border-slate-800/30 transition-all group">
                         <div
-                            class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-4 font-bold group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                            class="w-12 h-12 rounded-xl bg-slate-800/10 text-slate-600 flex items-center justify-center text-xl mb-4 font-bold group-hover:bg-slate-800 group-hover:text-white transition-all">
                             <i class="bi bi-shield-check"></i>
                         </div>
                         <h3 class="font-bold text-lg mb-2">Higienis & Bersertifikat</h3>
@@ -580,9 +536,9 @@
                             pangan, higienis, serta teruji halal untuk dikonsumsi.</p>
                     </div>
                     <div
-                        class="p-6 bg-slate-800/50 rounded-2xl border border-slate-800 hover:border-emerald-500/30 transition-all group">
+                        class="p-6 bg-slate-800/50 rounded-2xl border border-slate-800 hover:border-slate-800/30 transition-all group">
                         <div
-                            class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-4 font-bold group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                            class="w-12 h-12 rounded-xl bg-slate-800/10 text-slate-600 flex items-center justify-center text-xl mb-4 font-bold group-hover:bg-slate-800 group-hover:text-white transition-all">
                             <i class="bi bi-gift"></i>
                         </div>
                         <h3 class="font-bold text-lg mb-2">Oleh-Oleh Sempurna</h3>
@@ -604,7 +560,7 @@
                         Bolu Susu Lembang.</p>
                 </div>
                 <a href="news.html"
-                    class="inline-flex items-center gap-1 text-sm font-bold text-emerald-600 hover:text-emerald-700 group transition-colors">
+                    class="inline-flex items-center gap-1 text-sm font-bold text-slate-800 hover:text-slate-900 group transition-colors">
                     Lihat Semua Artikel <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i>
                 </a>
             </div>
@@ -618,15 +574,15 @@
                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         </div>
                         <div class="space-y-1">
-                            <p class="text-[11px] font-bold text-emerald-600 uppercase tracking-wide">Tips & Resep
+                            <p class="text-[11px] font-bold text-slate-800 uppercase tracking-wide">Tips & Resep
                                 &bull; 11 Juli 2026</p>
                             <h3
-                                class="font-extrabold text-slate-900 text-base line-clamp-2 leading-snug group-hover:text-emerald-600 transition-colors">
+                                class="font-extrabold text-slate-900 text-base line-clamp-2 leading-snug group-hover:text-slate-800 transition-colors">
                                 Tips Menyimpan Bolu Susu Agar Tetap Segar dan Lembut</h3>
                         </div>
                     </div>
                     <div
-                        class="pt-4 mt-3 border-t border-slate-50 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-emerald-600 transition-colors">
+                        class="pt-4 mt-3 border-t border-slate-50 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-slate-800 transition-colors">
                         <span>Baca Selengkapnya</span>
                         <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i>
                     </div>
@@ -640,15 +596,15 @@
                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         </div>
                         <div class="space-y-1">
-                            <p class="text-[11px] font-bold text-emerald-600 uppercase tracking-wide">Promo Spesial
+                            <p class="text-[11px] font-bold text-slate-800 uppercase tracking-wide">Promo Spesial
                                 &bull; 10 Juli 2026</p>
                             <h3
-                                class="font-extrabold text-slate-900 text-base line-clamp-2 leading-snug group-hover:text-emerald-600 transition-colors">
+                                class="font-extrabold text-slate-900 text-base line-clamp-2 leading-snug group-hover:text-slate-800 transition-colors">
                                 Promo Akhir Pekan â€“ Diskon Spesial Pembelian Lapis Talas Bogor</h3>
                         </div>
                     </div>
                     <div
-                        class="pt-4 mt-3 border-t border-slate-50 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-emerald-600 transition-colors">
+                        class="pt-4 mt-3 border-t border-slate-50 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-slate-800 transition-colors">
                         <span>Baca Selengkapnya</span>
                         <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i>
                     </div>
@@ -662,15 +618,15 @@
                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         </div>
                         <div class="space-y-1">
-                            <p class="text-[11px] font-bold text-emerald-600 uppercase tracking-wide">Info Outlet &bull;
+                            <p class="text-[11px] font-bold text-slate-800 uppercase tracking-wide">Info Outlet &bull;
                                 8 Juli 2026</p>
                             <h3
-                                class="font-extrabold text-slate-900 text-base line-clamp-2 leading-snug group-hover:text-emerald-600 transition-colors">
+                                class="font-extrabold text-slate-900 text-base line-clamp-2 leading-snug group-hover:text-slate-800 transition-colors">
                                 Kunjungi Outlet Resmi Kami di Pusat Oleh-Oleh Lembang</h3>
                         </div>
                     </div>
                     <div
-                        class="pt-4 mt-3 border-t border-slate-50 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-emerald-600 transition-colors">
+                        class="pt-4 mt-3 border-t border-slate-50 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-slate-800 transition-colors">
                         <span>Baca Selengkapnya</span>
                         <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i>
                     </div>
@@ -685,7 +641,7 @@
             <div
                 class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden">
                 <div
-                    class="absolute bottom-[-20%] left-[-10%] w-64 h-64 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none">
+                    class="absolute bottom-[-20%] left-[-10%] w-64 h-64 bg-slate-800/10 rounded-full blur-2xl pointer-events-none">
                 </div>
                 <div class="relative z-10 max-w-2xl mx-auto space-y-5">
                     <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">Ingin Pesan Bolu Susu Lembang
@@ -694,7 +650,7 @@
                         WhatsApp untuk mendapatkan varian rasa lengkap dan pengiriman tercepat ke lokasi Anda.</p>
                     <div class="pt-2">
                         <a href="https://wa.me/6287885038485" target="_blank"
-                            class="inline-flex items-center gap-2 px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl text-sm shadow-lg shadow-emerald-500/20 transition-all duration-300">
+                            class="inline-flex items-center gap-2 px-6 py-3.5 bg-slate-800 hover:bg-slate-900 text-white font-bold rounded-xl text-sm shadow-lg shadow-slate-800/20 transition-all duration-300">
                             <i class="bi bi-whatsapp"></i> Pesan via WhatsApp
                         </a>
                     </div>
@@ -707,12 +663,12 @@
     <section class="py-16 bg-white border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div class="lg:col-span-5 space-y-4">
-                <span class="text-emerald-600 font-bold text-xs uppercase tracking-wider">Lokasi Outlet</span>
+                <span class="text-slate-800 font-bold text-xs uppercase tracking-wider">Lokasi Outlet</span>
                 <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Kunjungi Outlet Resmi Kami
                 </h3>
                 <p class="text-slate-500 font-medium leading-relaxed">Dapatkan produk Bolu Susu Lembang yang dijamin
                     keasliannya di outlet-outlet terdekat yang tersebar di kota Anda.</p>
-                <div class="p-4 bg-slate-50 border-l-4 border-emerald-500 rounded-r-2xl space-y-1">
+                <div class="p-4 bg-slate-50 border-l-4 border-slate-800 rounded-r-2xl space-y-1">
                     <p class="text-sm font-bold text-slate-800">Alamat Outlet Utama:</p>
                     <p class="text-xs text-slate-600 font-medium">Jl. Raya Lembang No. 123, Lembang, Kab. Bandung Barat,
                         Jawa Barat</p>
@@ -721,7 +677,7 @@
             <div
                 class="lg:col-span-7 h-72 w-full rounded-2xl overflow-hidden shadow-inner border border-slate-100 bg-slate-100 relative">
                 <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-400 gap-2">
-                    <i class="bi bi-geo-alt text-3xl text-emerald-500 animate-bounce"></i>
+                    <i class="bi bi-geo-alt text-3xl text-slate-700 animate-bounce"></i>
                     <span class="text-xs font-bold text-slate-500">Interactive Location Map</span>
                 </div>
             </div>
@@ -762,16 +718,16 @@
                 <h4 class="text-white font-semibold text-sm tracking-wider uppercase mb-3">Get In Touch</h4>
                 <ul class="space-y-2.5 text-sm">
                     <li class="flex items-start gap-3">
-                        <i class="bi bi-geo-alt text-emerald-500 mt-0.5"></i>
+                        <i class="bi bi-geo-alt text-slate-700 mt-0.5"></i>
                         <span>Jl. Jalur Utama No. 123, Tangerang, Banten</span>
                     </li>
                     <li class="flex items-center gap-3">
-                        <i class="bi bi-whatsapp text-emerald-500"></i>
+                        <i class="bi bi-whatsapp text-slate-700"></i>
                         <a href="https://wa.me/6287885038485" target="_blank"
                             class="hover:text-white transition-colors">+62 878-8503-8485</a>
                     </li>
                     <li class="flex items-center gap-3">
-                        <i class="bi bi-envelope text-emerald-500"></i>
+                        <i class="bi bi-envelope text-slate-700"></i>
                         <a href="mailto:info@perusahaan.com"
                             class="hover:text-white transition-colors">info@perusahaan.com</a>
                     </li>
@@ -787,9 +743,9 @@
 
     <!-- FLOATING WA BUTTON -->
     <a href="https://wa.me/6287885038485" target="_blank"
-        class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-emerald-500 text-white rounded-full shadow-lg hover:bg-emerald-600 transition-all duration-300 group hover:scale-110"
+        class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-slate-800 text-white rounded-full shadow-lg hover:bg-slate-900 transition-all duration-300 group hover:scale-110"
         aria-label="Chat via WhatsApp">
-        <span class="absolute inset-0 rounded-full bg-emerald-500/40 animate-ping group-hover:animate-none"></span>
+        <span class="absolute inset-0 rounded-full bg-slate-800/40 animate-ping group-hover:animate-none"></span>
         <i class="bi bi-whatsapp text-2xl relative z-10"></i>
     </a>
 
@@ -857,9 +813,9 @@
             sliderDots.forEach((dot, i) => {
                 if (i === currentSlide) {
                     dot.classList.remove('w-2', 'bg-slate-300', 'hover:bg-slate-400');
-                    dot.classList.add('w-8', 'bg-emerald-600');
+                    dot.classList.add('w-8', 'bg-slate-800');
                 } else {
-                    dot.classList.remove('w-8', 'bg-emerald-600');
+                    dot.classList.remove('w-8', 'bg-slate-800');
                     dot.classList.add('w-2', 'bg-slate-300', 'hover:bg-slate-400');
                 }
             });

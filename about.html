@@ -7,7 +7,7 @@
     <title>Tentang Kami | Geka Creative & Bolu Susu Lembang</title>
     <meta name="description"
         content="Tentang Geka Creative dan tim berpengalaman di balik layanan digitalisasi UMKM serta Bolu Susu Lembang.">
-    <link rel="shortcut icon" href="./asset/fav.png" type="image/png">
+    <link rel="shortcut icon" href="./asset/logo.png?v=2" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -41,6 +41,7 @@
             border-radius: 10px;
         }
     </style>
+    <script src="./cart.js"></script>
 </head>
 
 <body class="bg-slate-50/50 text-slate-800 antialiased pt-24 font-sans">
@@ -57,39 +58,31 @@
                     </a>
                 </div>
 
-                <nav class="hidden md:flex space-x-8 items-center text-sm font-semibold text-slate-600">
-                    <a href="index.html" class="hover:text-emerald-600 transition-colors duration-200">Home</a>
-                    <a href="about.html" class="text-emerald-600 font-bold transition-colors duration-200">About</a>
-                    <a href="store.html" class="hover:text-emerald-600 transition-colors duration-200">Store</a>
-                    <a href="category.html" class="hover:text-emerald-600 transition-colors duration-200">Category</a>
-                    <a href="news.html" class="hover:text-emerald-600 transition-colors duration-200">Articles</a>
-                    <a href="contact.html" class="hover:text-emerald-600 transition-colors duration-200">Contact</a>
-
+                                <nav class="hidden md:flex space-x-8 items-center text-sm font-semibold text-slate-600">
+                    <a href="index.html" class="hover:text-slate-800 transition-colors duration-200">Home</a>
+                    <a href="about.html" class="text-slate-800 font-bold transition-colors duration-200">About</a>
+                    <a href="store.html" class="hover:text-slate-800 transition-colors duration-200">Sale</a>
+                    <a href="category.html" class="hover:text-slate-800 transition-colors duration-200">Category</a>
                     <div class="border-l border-slate-200 pl-4 ml-2">
-                        <a href="store.html"
-                            class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-600 relative hover:bg-slate-100 hover:text-emerald-600 transition-all"
-                            title="Lihat Keranjang Anda">
-                            <i class="bi bi-bag text-base"></i>
-                            <span
-                                class="absolute -top-1.5 -right-1.5 bg-emerald-500 text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold px-1 min-w-[18px]">0</span>
+                        <a href="cart.html"
+                            class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-600 relative hover:bg-slate-100 hover:text-slate-800 transition-all"
+                            title="Keranjang"><i class="bi bi-bag text-base"></i>
+                            <span class="cart-badge absolute -top-1.5 -right-1.5 bg-slate-800 text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold px-1 min-w-[18px]">0</span>
                         </a>
                     </div>
                 </nav>
 
-                <div class="flex md:hidden items-center gap-3">
-                    <a href="store.html"
-                        class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-600 relative hover:bg-slate-100 transition-all">
-                        <i class="bi bi-bag text-base"></i>
-                        <span
-                            class="absolute -top-1.5 -right-1.5 bg-emerald-500 text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold px-1 min-w-[18px]">0</span>
-                    </a>
-
-                    <button id="menu-toggle" type="button"
-                        class="text-slate-700 hover:text-emerald-600 focus:outline-none text-2xl transition-colors duration-200"
-                        aria-label="Toggle menu">
-                        <i class="bi bi-list"></i>
-                    </button>
-                </div>
+                            <div class="flex md:hidden items-center gap-3">
+                <a href="cart.html"
+                    class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-600 relative hover:bg-slate-100 transition-all"
+                    title="Keranjang"><i class="bi bi-bag text-base"></i>
+                    <span class="cart-badge absolute -top-1.5 -right-1.5 bg-slate-800 text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold px-1 min-w-[18px]">0</span>
+                </a>
+                <button id="menu-toggle" type="button"
+                    class="w-10 h-10 flex items-center justify-center rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-slate-800 hover:border-slate-300 transition-all focus:outline-none shadow-sm"
+                    aria-label="Toggle menu">
+                    <i class="bi bi-list text-xl"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -115,36 +108,40 @@
                 </button>
             </div>
             <!-- Drawer Links -->
-            <div class="px-5 py-6 space-y-1.5 flex-1 overflow-y-auto font-semibold text-slate-700">
-                <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 px-3 mb-2">Menu Navigasi
-                </div>
+                        <div class="px-5 py-6 space-y-1.5 flex-1 overflow-y-auto font-semibold text-slate-700">
+                <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 px-3 mb-2">Menu Navigasi</div>
+                <a href="index.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all"><i class="bi bi-house-door text-lg"></i><span>Home</span></a>
+                <a href="about.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl bg-slate-100 text-slate-800 font-bold transition-all"><i class="bi bi-info-circle text-lg"></i><span>About</span></a>
+                <a href="store.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all"><i class="bi bi-shop text-lg"></i><span>Sale</span></a>
+                <a href="category.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all"><i class="bi bi-grid text-lg"></i><span>Category</span></a>
+            </div>
                 <a href="index.html"
-                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">
+                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all">
                     <i class="bi bi-house-door text-lg"></i>
                     <span>Home</span>
                 </a>
                 <a href="about.html"
-                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl bg-emerald-50 text-emerald-600 font-bold transition-all">
+                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl bg-slate-100 text-slate-800 font-bold transition-all">
                     <i class="bi bi-info-circle text-lg"></i>
                     <span>About</span>
                 </a>
                 <a href="store.html"
-                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">
+                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all">
                     <i class="bi bi-shop text-lg"></i>
                     <span>Store</span>
                 </a>
                 <a href="store.html"
-                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">
+                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all">
                     <i class="bi bi-grid text-lg"></i>
                     <span>Category</span>
                 </a>
                 <a href="news.html"
-                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">
+                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all">
                     <i class="bi bi-newspaper text-lg"></i>
                     <span>Articles</span>
                 </a>
                 <a href="contact.html"
-                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">
+                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all">
                     <i class="bi bi-envelope text-lg"></i>
                     <span>Contact</span>
                 </a>
@@ -152,7 +149,7 @@
             <!-- Drawer Footer CTA -->
             <div class="p-5 border-t border-slate-100 bg-slate-50/80 space-y-3">
                 <a href="https://wa.me/6287885038485" target="_blank"
-                    class="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm shadow-md shadow-emerald-500/20 transition-all">
+                    class="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-900 text-white font-bold text-sm shadow-md shadow-slate-800/20 transition-all">
                     <i class="bi bi-whatsapp text-base"></i>
                     <span>Chat WhatsApp</span>
                 </a>
@@ -165,7 +162,7 @@
     <section class="bg-white border-b border-slate-200 py-16 sm:py-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span
-                class="inline-block px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-100 text-xs font-bold uppercase tracking-wider mb-4">
+                class="inline-block px-3.5 py-1 rounded-full bg-slate-100 text-slate-800 border border-slate-200 text-xs font-bold uppercase tracking-wider mb-4">
                 Tentang Geka Creative
             </span>
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 mb-6 leading-tight">
@@ -176,7 +173,7 @@
                 teknologi untuk meningkatkan produktivitas, efisiensi, dan daya saing mereka.
             </p>
             <a href="contact.html"
-                class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold shadow-lg shadow-emerald-600/20 transition-all transform hover:-translate-y-0.5">
+                class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-900 text-white font-bold shadow-lg shadow-slate-800/20 transition-all transform hover:-translate-y-0.5">
                 <i class="bi bi-rocket-takeoff"></i> Get Started Now
             </a>
         </div>
@@ -188,7 +185,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div class="space-y-6">
                     <span
-                        class="inline-block px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold uppercase tracking-wider">
+                        class="inline-block px-3.5 py-1 rounded-full bg-slate-100 text-slate-800 text-xs font-bold uppercase tracking-wider">
                         Siapa Kami
                     </span>
                     <h2 class="text-3xl font-extrabold text-slate-900">
@@ -222,7 +219,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-14">
                 <span
-                    class="inline-block px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-3">
+                    class="inline-block px-3.5 py-1 rounded-full bg-slate-100 text-slate-800 text-xs font-bold uppercase tracking-wider mb-3">
                     Tim Kami
                 </span>
                 <h2 class="text-3xl font-extrabold text-slate-900">
@@ -234,10 +231,10 @@
                 <div
                     class="bg-white rounded-2xl p-8 text-center border border-slate-200 hover:shadow-lg transition-all">
                     <div
-                        class="w-20 h-20 rounded-full bg-emerald-600 text-white font-bold text-2xl flex items-center justify-center mx-auto mb-5 shadow">
+                        class="w-20 h-20 rounded-full bg-slate-800 text-white font-bold text-2xl flex items-center justify-center mx-auto mb-5 shadow">
                         CR</div>
                     <h3 class="text-xl font-bold text-slate-900 mb-1">Condro Ribowo</h3>
-                    <div class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-4">Marketing & E-Commerce
+                    <div class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-4">Marketing & E-Commerce
                         Specialist</div>
                     <p class="text-sm text-slate-500 leading-relaxed">8 Tahun di dunia marketing dan e-commerce, serta
                         media dan entertainment, salah satu yang terbesar di Indonesia.</p>
@@ -246,10 +243,10 @@
                 <div
                     class="bg-white rounded-2xl p-8 text-center border border-slate-200 hover:shadow-lg transition-all">
                     <div
-                        class="w-20 h-20 rounded-full bg-emerald-600 text-white font-bold text-2xl flex items-center justify-center mx-auto mb-5 shadow">
+                        class="w-20 h-20 rounded-full bg-slate-800 text-white font-bold text-2xl flex items-center justify-center mx-auto mb-5 shadow">
                         CR</div>
                     <h3 class="text-xl font-bold text-slate-900 mb-1">Condro Riyanto</h3>
-                    <div class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-4">UMKM Digitalization
+                    <div class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-4">UMKM Digitalization
                         Expert</div>
                     <p class="text-sm text-slate-500 leading-relaxed">Aktif dalam pengembangan UMKM daerah di salah satu
                         dinas koperasi dan UMKM, serta aktif dalam perkembangan digitalisasi UMKM di daerah.</p>
@@ -258,10 +255,10 @@
                 <div
                     class="bg-white rounded-2xl p-8 text-center border border-slate-200 hover:shadow-lg transition-all">
                     <div
-                        class="w-20 h-20 rounded-full bg-emerald-600 text-white font-bold text-2xl flex items-center justify-center mx-auto mb-5 shadow">
+                        class="w-20 h-20 rounded-full bg-slate-800 text-white font-bold text-2xl flex items-center justify-center mx-auto mb-5 shadow">
                         HC</div>
                     <h3 class="text-xl font-bold text-slate-900 mb-1">Heri Cahyono</h3>
-                    <div class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-4">IT Solution & Business
+                    <div class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-4">IT Solution & Business
                         Development</div>
                     <p class="text-sm text-slate-500 leading-relaxed">14 tahun di dunia marketing baik media
                         entertainment maupun IT solusi. 7 tahun++ di dunia IT dan aktif dalam perkembangan UMKM di
@@ -276,7 +273,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-14">
                 <span
-                    class="inline-block px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-3">
+                    class="inline-block px-3.5 py-1 rounded-full bg-slate-100 text-slate-800 text-xs font-bold uppercase tracking-wider mb-3">
                     Nilai Kami
                 </span>
                 <h2 class="text-3xl font-extrabold text-slate-900">
@@ -287,7 +284,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all">
                     <div
-                        class="w-14 h-14 rounded-xl bg-emerald-50 flex items-center justify-center mb-6 text-emerald-600 text-2xl">
+                        class="w-14 h-14 rounded-xl bg-slate-100 flex items-center justify-center mb-6 text-slate-800 text-2xl">
                         <i class="bi bi-shield-check"></i>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-3">DATA AMAN</h3>
@@ -297,7 +294,7 @@
 
                 <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all">
                     <div
-                        class="w-14 h-14 rounded-xl bg-emerald-50 flex items-center justify-center mb-6 text-emerald-600 text-2xl">
+                        class="w-14 h-14 rounded-xl bg-slate-100 flex items-center justify-center mb-6 text-slate-800 text-2xl">
                         <i class="bi bi-currency-dollar"></i>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-3">HARGA TERJANGKAU</h3>
@@ -308,7 +305,7 @@
 
                 <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all">
                     <div
-                        class="w-14 h-14 rounded-xl bg-emerald-50 flex items-center justify-center mb-6 text-emerald-600 text-2xl">
+                        class="w-14 h-14 rounded-xl bg-slate-100 flex items-center justify-center mb-6 text-slate-800 text-2xl">
                         <i class="bi bi-palette"></i>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-3">DESAIN FLEKSIBEL</h3>
@@ -353,16 +350,16 @@
                 <h4 class="text-white font-semibold text-sm tracking-wider uppercase mb-3">Get In Touch</h4>
                 <ul class="space-y-2.5 text-sm">
                     <li class="flex items-start gap-3">
-                        <i class="bi bi-geo-alt text-emerald-500 mt-0.5"></i>
+                        <i class="bi bi-geo-alt text-slate-700 mt-0.5"></i>
                         <span>Jl. Jalur Utama No. 123, Tangerang, Banten</span>
                     </li>
                     <li class="flex items-center gap-3">
-                        <i class="bi bi-whatsapp text-emerald-500"></i>
+                        <i class="bi bi-whatsapp text-slate-700"></i>
                         <a href="https://wa.me/6287885038485" target="_blank"
                             class="hover:text-white transition-colors">+62 878-8503-8485</a>
                     </li>
                     <li class="flex items-center gap-3">
-                        <i class="bi bi-envelope text-emerald-500"></i>
+                        <i class="bi bi-envelope text-slate-700"></i>
                         <a href="mailto:info@perusahaan.com"
                             class="hover:text-white transition-colors">info@perusahaan.com</a>
                     </li>
@@ -378,9 +375,9 @@
 
     <!-- FLOATING WA BUTTON -->
     <a href="https://wa.me/6287885038485" target="_blank"
-        class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-emerald-500 text-white rounded-full shadow-lg hover:bg-emerald-600 transition-all duration-300 group hover:scale-110"
+        class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-slate-800 text-white rounded-full shadow-lg hover:bg-slate-900 transition-all duration-300 group hover:scale-110"
         aria-label="Chat via WhatsApp">
-        <span class="absolute inset-0 rounded-full bg-emerald-500/40 animate-ping group-hover:animate-none"></span>
+        <span class="absolute inset-0 rounded-full bg-slate-800/40 animate-ping group-hover:animate-none"></span>
         <i class="bi bi-whatsapp text-2xl relative z-10"></i>
     </a>
 

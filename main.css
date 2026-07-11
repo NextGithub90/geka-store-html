@@ -1,0 +1,39 @@
+/* =============================================
+   GEKA STORE — main.css (Shared Styles)
+   ============================================= */
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #10b981; border-radius: 10px; }
+
+/* ---------- Glass Card ---------- */
+.glass-card {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* ---------- Sidebar transitions ---------- */
+#sidebar-menu { transition: visibility 0s linear 300ms; }
+#sidebar-menu:not(.invisible) { transition: visibility 0s; }
+
+/* ---------- Animations ---------- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeInUp .4s ease both; }
+
+/* ---------- Product variants (detail page) ---------- */
+.thumb-active { border-color: #10b981 !important; }
+.var-active   { background: #1e293b !important; color: #fff !important; border-color: #1e293b !important; }
+.tab-active   { border-bottom: 2px solid #10b981; color: #059669; font-weight: 700; }
+
+/* ---------- Stars ---------- */
+.star-filled { color: #f59e0b; }
+.star-empty  { color: #d1d5db; }
+
+/* ---------- No scrollbar helper ---------- */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
