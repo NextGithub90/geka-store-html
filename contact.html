@@ -1,0 +1,397 @@
+﻿<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Kami | Bolu Susu Khas Lembang</title>
+    <meta name="description"
+        content="Hubungi tim Geka Store & Bolu Susu Lembang untuk pertanyaan, konsultasi, atau pemesanan.">
+    <link rel="shortcut icon" href="./asset/fav.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #10b981;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50/50 text-slate-800 antialiased pt-24 font-sans min-h-screen flex flex-col">
+
+    <!-- NAVBAR -->
+    <header id="main-navbar"
+        class="bg-white/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-slate-100 transition-all duration-300 h-24 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="flex items-center justify-between">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center">
+                        <img id="navbar-logo" class="h-12 w-auto object-contain transition-all duration-300"
+                            src="./asset/logo.png" alt="Logo Geka">
+                    </a>
+                </div>
+
+                <nav class="hidden md:flex space-x-8 items-center text-sm font-semibold text-slate-600">
+                    <a href="index.html" class="hover:text-emerald-600 transition-colors duration-200">Home</a>
+                    <a href="about.html" class="hover:text-emerald-600 transition-colors duration-200">About</a>
+                    <a href="store.html" class="hover:text-emerald-600 transition-colors duration-200">Store</a>
+                    <a href="category.html" class="hover:text-emerald-600 transition-colors duration-200">Category</a>
+                    <a href="news.html" class="hover:text-emerald-600 transition-colors duration-200">Articles</a>
+                    <a href="contact.html" class="text-emerald-600 font-bold transition-colors duration-200">Contact</a>
+
+                    <div class="border-l border-slate-200 pl-4 ml-2">
+                        <a href="store.html"
+                            class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-600 relative hover:bg-slate-100 hover:text-emerald-600 transition-all"
+                            title="Lihat Keranjang Anda">
+                            <i class="bi bi-bag text-base"></i>
+                            <span
+                                class="absolute -top-1.5 -right-1.5 bg-emerald-500 text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold px-1 min-w-[18px]">0</span>
+                        </a>
+                    </div>
+                </nav>
+
+                <div class="flex md:hidden items-center gap-3">
+                    <a href="store.html"
+                        class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-600 relative hover:bg-slate-100 transition-all">
+                        <i class="bi bi-bag text-base"></i>
+                        <span
+                            class="absolute -top-1.5 -right-1.5 bg-emerald-500 text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold px-1 min-w-[18px]">0</span>
+                    </a>
+
+                    <button id="menu-toggle" type="button"
+                        class="text-slate-700 hover:text-emerald-600 focus:outline-none text-2xl transition-colors duration-200"
+                        aria-label="Toggle menu">
+                        <i class="bi bi-list"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Sidebar Drawer (Placed outside header to avoid backdrop-filter containing block trap) -->
+    <div id="sidebar-menu" class="fixed inset-0 z-[100] pointer-events-none invisible transition-all duration-300">
+        <!-- Backdrop -->
+        <div id="sidebar-backdrop"
+            class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm opacity-0 transition-opacity duration-300 ease-in-out">
+        </div>
+        <!-- Drawer Panel -->
+        <div id="sidebar-panel"
+            class="absolute inset-y-0 right-0 max-w-xs w-80 bg-white shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out pointer-events-auto">
+            <!-- Drawer Header -->
+            <div class="px-6 py-5 flex items-center justify-between border-b border-slate-100 bg-slate-50/50">
+                <a href="index.html" class="flex items-center gap-2">
+                    <img class="h-9 w-auto" src="./asset/logo.png" alt="Logo Geka">
+                </a>
+                <button id="menu-close" type="button"
+                    class="w-9 h-9 rounded-xl bg-white border border-slate-200 text-slate-500 hover:text-rose-600 hover:border-rose-200 flex items-center justify-center transition-all focus:outline-none shadow-sm"
+                    aria-label="Close menu">
+                    <i class="bi bi-x-lg text-sm"></i>
+                </button>
+            </div>
+            <!-- Drawer Links -->
+            <div class="px-5 py-6 space-y-1.5 flex-1 overflow-y-auto font-semibold text-slate-700">
+                <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 px-3 mb-2">Menu Navigasi
+                </div>
+                <a href="index.html"
+                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">
+                    <i class="bi bi-house-door text-lg"></i>
+                    <span>Home</span>
+                </a>
+                <a href="about.html"
+                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">
+                    <i class="bi bi-info-circle text-lg"></i>
+                    <span>About</span>
+                </a>
+                <a href="store.html"
+                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">
+                    <i class="bi bi-shop text-lg"></i>
+                    <span>Store</span>
+                </a>
+                <a href="store.html"
+                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">
+                    <i class="bi bi-grid text-lg"></i>
+                    <span>Category</span>
+                </a>
+                <a href="news.html"
+                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">
+                    <i class="bi bi-newspaper text-lg"></i>
+                    <span>Articles</span>
+                </a>
+                <a href="contact.html"
+                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl bg-emerald-50 text-emerald-600 font-bold transition-all">
+                    <i class="bi bi-envelope text-lg"></i>
+                    <span>Contact</span>
+                </a>
+            </div>
+            <!-- Drawer Footer CTA -->
+            <div class="p-5 border-t border-slate-100 bg-slate-50/80 space-y-3">
+                <a href="https://wa.me/6287885038485" target="_blank"
+                    class="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm shadow-md shadow-emerald-500/20 transition-all">
+                    <i class="bi bi-whatsapp text-base"></i>
+                    <span>Chat WhatsApp</span>
+                </a>
+                <p class="text-[11px] text-center text-slate-400">Â© 2026 Geka Store</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="bg-white border-b border-slate-200 py-12 text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <span
+                class="inline-block px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-100 text-xs font-bold uppercase tracking-wider mb-3">
+                Hubungi Kami
+            </span>
+            <h1 class="text-3xl sm:text-4xl font-black text-slate-900 mb-3">
+                Hubungi Tim Kami
+            </h1>
+            <p class="text-slate-500 text-sm sm:text-base max-w-xl mx-auto">
+                Punya pertanyaan mengenai layanan kami atau ingin mulai mendigitalisasi bisnis Anda? Silakan hubungi
+                kami atau isi formulir di bawah ini.
+            </p>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <!-- Contact Info -->
+            <div class="space-y-6">
+                <h3 class="text-xl font-extrabold text-slate-900 mb-4">
+                    Informasi Kontak
+                </h3>
+
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex items-start gap-4">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 shrink-0 text-xl">
+                        <i class="bi bi-geo-alt"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-900 mb-1">Alamat Kantor</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed">Jl. Jalur Utama No. 123, Tangerang, Banten</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex items-start gap-4">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 shrink-0 text-xl">
+                        <i class="bi bi-whatsapp"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-900 mb-1">WhatsApp Chat</h4>
+                        <a href="https://wa.me/6287885038485" target="_blank" rel="noopener noreferrer"
+                            class="text-sm text-emerald-600 font-bold hover:underline">+62 878-8503-8485</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex items-start gap-4">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 shrink-0 text-xl">
+                        <i class="bi bi-envelope"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-900 mb-1">Surel Resmi</h4>
+                        <a href="mailto:info@perusahaan.com"
+                            class="text-sm text-emerald-600 font-bold hover:underline">info@perusahaan.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="lg:col-span-2 bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm">
+                <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Kirim Pesan</h3>
+                <p class="text-sm text-slate-500 mb-8">Isi formulir berikut, pesan Anda akan langsung terkirim ke
+                    WhatsApp Customer Service kami.</p>
+
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Nama
+                                Lengkap *</label>
+                            <input id="form-name" type="text" required placeholder="Masukkan nama Anda"
+                                class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-sm text-slate-800 focus:outline-none focus:border-emerald-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Alamat
+                                Email *</label>
+                            <input id="form-email" type="email" required placeholder="nama@email.com"
+                                class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-sm text-slate-800 focus:outline-none focus:border-emerald-500">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Subjek Pesan
+                            *</label>
+                        <input id="form-subject" type="text" required
+                            placeholder="Contoh: Pemesanan Bolu Susu / Konsultasi Website"
+                            class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-sm text-slate-800 focus:outline-none focus:border-emerald-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Isi Pesan
+                            *</label>
+                        <textarea id="form-message" rows="5" required
+                            placeholder="Tuliskan pesan atau pertanyaan Anda secara detail..."
+                            class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-sm text-slate-800 focus:outline-none focus:border-emerald-500 resize-none"></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold shadow-lg shadow-emerald-600/20 transition-all w-full sm:w-auto">
+                        <i class="bi bi-send"></i> Kirim Pesan ke WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 pt-16 pb-8 border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+            <div class="space-y-4">
+                <img src="./asset/logo.png" alt="Logo Footer" class="h-10 w-auto brightness-0 invert">
+                <p class="text-sm leading-relaxed text-slate-400">Kami menyediakan solusi digital terbaik untuk membantu
+                    bisnis dan UMKM berkembang lebih cepat di era digital modern saat ini.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold text-sm tracking-wider uppercase mb-4">Informasi</h4>
+                <ul class="space-y-2.5 text-sm">
+                    <li><a href="about.html" class="hover:text-white transition-colors">Tentang Kami</a></li>
+                    <li><a href="store.html" class="hover:text-white transition-colors">Toko</a></li>
+                    <li><a href="news.html" class="hover:text-white transition-colors">Artikel</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition-colors">Kontak</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold text-sm tracking-wider uppercase mb-4">Layanan & Kategori</h4>
+                <ul class="space-y-2.5 text-sm">
+                    <li><a href="store.html?category=Lapis%20Talas%20Bogor"
+                            class="hover:text-white transition-colors">Lapis Talas Bogor</a></li>
+                    <li><a href="store.html?category=Bolu%20Susu%20Madu" class="hover:text-white transition-colors">Bolu
+                            Susu Madu</a></li>
+                    <li><a href="store.html?category=Pie%20Susu" class="hover:text-white transition-colors">Pie Susu
+                            Lembang</a></li>
+                    <li><a href="store.html?category=Bakpia%20Khas%20Jogja"
+                            class="hover:text-white transition-colors">Bakpia Khas Jogja</a></li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h4 class="text-white font-semibold text-sm tracking-wider uppercase mb-3">Get In Touch</h4>
+                <ul class="space-y-2.5 text-sm">
+                    <li class="flex items-start gap-3">
+                        <i class="bi bi-geo-alt text-emerald-500 mt-0.5"></i>
+                        <span>Jl. Jalur Utama No. 123, Tangerang, Banten</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="bi bi-whatsapp text-emerald-500"></i>
+                        <a href="https://wa.me/6287885038485" target="_blank"
+                            class="hover:text-white transition-colors">+62 878-8503-8485</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="bi bi-envelope text-emerald-500"></i>
+                        <a href="mailto:info@perusahaan.com"
+                            class="hover:text-white transition-colors">info@perusahaan.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-slate-800 text-sm text-center md:text-left flex flex-col md:flex-row justify-between gap-4">
+            <p>Â© 2026 Geka Store. All rights reserved.</p>
+            <p class="text-xs text-slate-500">Designed with Plus Jakarta Sans & Tailwind</p>
+        </div>
+    </footer>
+
+    <!-- FLOATING WA BUTTON -->
+    <a href="https://wa.me/6287885038485" target="_blank"
+        class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-emerald-500 text-white rounded-full shadow-lg hover:bg-emerald-600 transition-all duration-300 group hover:scale-110"
+        aria-label="Chat via WhatsApp">
+        <span class="absolute inset-0 rounded-full bg-emerald-500/40 animate-ping group-hover:animate-none"></span>
+        <i class="bi bi-whatsapp text-2xl relative z-10"></i>
+    </a>
+
+    <!-- SCRIPT -->
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('form-name').value;
+            const email = document.getElementById('form-email').value;
+            const subject = document.getElementById('form-subject').value;
+            const message = document.getElementById('form-message').value;
+
+            const text = `Halo Geka Store, saya ${name} (${email}).\nSubjek: ${subject}\nPesan: ${message}`;
+            const waUrl = `https://wa.me/6287885038485?text=${encodeURIComponent(text)}`;
+            window.open(waUrl, "_blank");
+        });
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('main-navbar');
+            const logo = document.getElementById('navbar-logo');
+            if (window.scrollY > 50) {
+                navbar.classList.remove('h-24', 'bg-white/80');
+                navbar.classList.add('h-16', 'bg-white/95', 'shadow-md', 'shadow-slate-100/50');
+                logo.classList.remove('h-12');
+                logo.classList.add('h-8');
+            } else {
+                navbar.classList.remove('h-16', 'bg-white/95', 'shadow-md', 'shadow-slate-100/50');
+                navbar.classList.add('h-24', 'bg-white/80');
+                logo.classList.remove('h-8');
+                logo.classList.add('h-12');
+            }
+        });
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const sidebarMenu = document.getElementById('sidebar-menu');
+        const sidebarBackdrop = document.getElementById('sidebar-backdrop');
+        const sidebarPanel = document.getElementById('sidebar-panel');
+
+        function openMenu() {
+            sidebarMenu.classList.remove('invisible');
+            setTimeout(() => {
+                sidebarBackdrop.classList.remove('opacity-0');
+                sidebarPanel.classList.remove('translate-x-full');
+            }, 10);
+        }
+
+        function closeMenu() {
+            sidebarBackdrop.classList.add('opacity-0');
+            sidebarPanel.classList.add('translate-x-full');
+            setTimeout(() => {
+                sidebarMenu.classList.add('invisible');
+            }, 300);
+        }
+
+        if (menuToggle) menuToggle.addEventListener('click', openMenu);
+        if (menuClose) menuClose.addEventListener('click', closeMenu);
+        if (sidebarBackdrop) sidebarBackdrop.addEventListener('click', closeMenu);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,433 @@
+﻿<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami | Geka Creative & Bolu Susu Lembang</title>
+    <meta name="description"
+        content="Tentang Geka Creative dan tim berpengalaman di balik layanan digitalisasi UMKM serta Bolu Susu Lembang.">
+    <link rel="shortcut icon" href="./asset/fav.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #10b981;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50/50 text-slate-800 antialiased pt-24 font-sans">
+
+    <!-- NAVBAR -->
+    <header id="main-navbar"
+        class="bg-white/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-slate-100 transition-all duration-300 h-24 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="flex items-center justify-between">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center">
+                        <img id="navbar-logo" class="h-12 w-auto object-contain transition-all duration-300"
+                            src="./asset/logo.png" alt="Logo Geka">
+                    </a>
+                </div>
+
+                <nav class="hidden md:flex space-x-8 items-center text-sm font-semibold text-slate-600">
+                    <a href="index.html" class="hover:text-emerald-600 transition-colors duration-200">Home</a>
+                    <a href="about.html" class="text-emerald-600 font-bold transition-colors duration-200">About</a>
+                    <a href="store.html" class="hover:text-emerald-600 transition-colors duration-200">Store</a>
+                    <a href="category.html" class="hover:text-emerald-600 transition-colors duration-200">Category</a>
+                    <a href="news.html" class="hover:text-emerald-600 transition-colors duration-200">Articles</a>
+                    <a href="contact.html" class="hover:text-emerald-600 transition-colors duration-200">Contact</a>
+
+                    <div class="border-l border-slate-200 pl-4 ml-2">
+                        <a href="store.html"
+                            class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-600 relative hover:bg-slate-100 hover:text-emerald-600 transition-all"
+                            title="Lihat Keranjang Anda">
+                            <i class="bi bi-bag text-base"></i>
+                            <span
+                                class="absolute -top-1.5 -right-1.5 bg-emerald-500 text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold px-1 min-w-[18px]">0</span>
+                        </a>
+                    </div>
+                </nav>
+
+                <div class="flex md:hidden items-center gap-3">
+                    <a href="store.html"
+                        class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-600 relative hover:bg-slate-100 transition-all">
+                        <i class="bi bi-bag text-base"></i>
+                        <span
+                            class="absolute -top-1.5 -right-1.5 bg-emerald-500 text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold px-1 min-w-[18px]">0</span>
+                    </a>
+
+                    <button id="menu-toggle" type="button"
+                        class="text-slate-700 hover:text-emerald-600 focus:outline-none text-2xl transition-colors duration-200"
+                        aria-label="Toggle menu">
+                        <i class="bi bi-list"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Sidebar Drawer (Placed outside header to avoid backdrop-filter containing block trap) -->
+    <div id="sidebar-menu" class="fixed inset-0 z-[100] pointer-events-none invisible transition-all duration-300">
+        <!-- Backdrop -->
+        <div id="sidebar-backdrop"
+            class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm opacity-0 transition-opacity duration-300 ease-in-out">
+        </div>
+        <!-- Drawer Panel -->
+        <div id="sidebar-panel"
+            class="absolute inset-y-0 right-0 max-w-xs w-80 bg-white shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out pointer-events-auto">
+            <!-- Drawer Header -->
+            <div class="px-6 py-5 flex items-center justify-between border-b border-slate-100 bg-slate-50/50">
+                <a href="index.html" class="flex items-center gap-2">
+                    <img class="h-9 w-auto" src="./asset/logo.png" alt="Logo Geka">
+                </a>
+                <button id="menu-close" type="button"
+                    class="w-9 h-9 rounded-xl bg-white border border-slate-200 text-slate-500 hover:text-rose-600 hover:border-rose-200 flex items-center justify-center transition-all focus:outline-none shadow-sm"
+                    aria-label="Close menu">
+                    <i class="bi bi-x-lg text-sm"></i>
+                </button>
+            </div>
+            <!-- Drawer Links -->
+            <div class="px-5 py-6 space-y-1.5 flex-1 overflow-y-auto font-semibold text-slate-700">
+                <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 px-3 mb-2">Menu Navigasi
+                </div>
+                <a href="index.html"
+                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">
+                    <i class="bi bi-house-door text-lg"></i>
+                    <span>Home</span>
+                </a>
+                <a href="about.html"
+                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl bg-emerald-50 text-emerald-600 font-bold transition-all">
+                    <i class="bi bi-info-circle text-lg"></i>
+                    <span>About</span>
+                </a>
+                <a href="store.html"
+                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">
+                    <i class="bi bi-shop text-lg"></i>
+                    <span>Store</span>
+                </a>
+                <a href="store.html"
+                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">
+                    <i class="bi bi-grid text-lg"></i>
+                    <span>Category</span>
+                </a>
+                <a href="news.html"
+                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">
+                    <i class="bi bi-newspaper text-lg"></i>
+                    <span>Articles</span>
+                </a>
+                <a href="contact.html"
+                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-emerald-600 transition-all">
+                    <i class="bi bi-envelope text-lg"></i>
+                    <span>Contact</span>
+                </a>
+            </div>
+            <!-- Drawer Footer CTA -->
+            <div class="p-5 border-t border-slate-100 bg-slate-50/80 space-y-3">
+                <a href="https://wa.me/6287885038485" target="_blank"
+                    class="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm shadow-md shadow-emerald-500/20 transition-all">
+                    <i class="bi bi-whatsapp text-base"></i>
+                    <span>Chat WhatsApp</span>
+                </a>
+                <p class="text-[11px] text-center text-slate-400">Â© 2026 Geka Store</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT HERO -->
+    <section class="bg-white border-b border-slate-200 py-16 sm:py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span
+                class="inline-block px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-100 text-xs font-bold uppercase tracking-wider mb-4">
+                Tentang Geka Creative
+            </span>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 mb-6 leading-tight">
+                Bikin Website hanya Hitungan Jam
+            </h1>
+            <p class="text-slate-500 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
+                Geka Creative adalah perusahaan IT yang berdedikasi untuk membantu UMKM dalam memanfaatkan
+                teknologi untuk meningkatkan produktivitas, efisiensi, dan daya saing mereka.
+            </p>
+            <a href="contact.html"
+                class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold shadow-lg shadow-emerald-600/20 transition-all transform hover:-translate-y-0.5">
+                <i class="bi bi-rocket-takeoff"></i> Get Started Now
+            </a>
+        </div>
+    </section>
+
+    <!-- DESCRIPTION SECTION -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <span
+                        class="inline-block px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold uppercase tracking-wider">
+                        Siapa Kami
+                    </span>
+                    <h2 class="text-3xl font-extrabold text-slate-900">
+                        Bagaimana Kami Membantu Anda
+                    </h2>
+                    <p class="text-slate-500 leading-relaxed">
+                        Dalam era digital yang terus berkembang, teknologi informasi telah menjadi salah satu faktor
+                        utama dalam kesuksesan bisnis. Khususnya, bagi Usaha Mikro, Kecil, dan Menengah (UMKM), memiliki
+                        akses ke solusi teknologi yang efisien dapat memberikan keunggulan kompetitif yang sangat
+                        dibutuhkan.
+                    </p>
+                </div>
+
+                <div class="space-y-6 lg:pt-12">
+                    <p class="text-slate-500 leading-relaxed">
+                        Salah satu layanan utama yang ditawarkan oleh Geka Creative adalah pembuatan Website. Kami
+                        bekerja sama dengan UMKM untuk merancang, mengembangkan, dan mengimplementasikan solusi yang
+                        sesuai dengan kebutuhan bisnis mereka.
+                    </p>
+                    <p class="text-slate-500 leading-relaxed">
+                        Kami menciptakan situs web yang responsif, menarik, dan mudah digunakan yang membantu UMKM untuk
+                        memperluas kehadiran online mereka.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section class="py-20 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span
+                    class="inline-block px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-3">
+                    Tim Kami
+                </span>
+                <h2 class="text-3xl font-extrabold text-slate-900">
+                    Tim Berpengalaman di Belakang Anda
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="bg-white rounded-2xl p-8 text-center border border-slate-200 hover:shadow-lg transition-all">
+                    <div
+                        class="w-20 h-20 rounded-full bg-emerald-600 text-white font-bold text-2xl flex items-center justify-center mx-auto mb-5 shadow">
+                        CR</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-1">Condro Ribowo</h3>
+                    <div class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-4">Marketing & E-Commerce
+                        Specialist</div>
+                    <p class="text-sm text-slate-500 leading-relaxed">8 Tahun di dunia marketing dan e-commerce, serta
+                        media dan entertainment, salah satu yang terbesar di Indonesia.</p>
+                </div>
+
+                <div
+                    class="bg-white rounded-2xl p-8 text-center border border-slate-200 hover:shadow-lg transition-all">
+                    <div
+                        class="w-20 h-20 rounded-full bg-emerald-600 text-white font-bold text-2xl flex items-center justify-center mx-auto mb-5 shadow">
+                        CR</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-1">Condro Riyanto</h3>
+                    <div class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-4">UMKM Digitalization
+                        Expert</div>
+                    <p class="text-sm text-slate-500 leading-relaxed">Aktif dalam pengembangan UMKM daerah di salah satu
+                        dinas koperasi dan UMKM, serta aktif dalam perkembangan digitalisasi UMKM di daerah.</p>
+                </div>
+
+                <div
+                    class="bg-white rounded-2xl p-8 text-center border border-slate-200 hover:shadow-lg transition-all">
+                    <div
+                        class="w-20 h-20 rounded-full bg-emerald-600 text-white font-bold text-2xl flex items-center justify-center mx-auto mb-5 shadow">
+                        HC</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-1">Heri Cahyono</h3>
+                    <div class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-4">IT Solution & Business
+                        Development</div>
+                    <p class="text-sm text-slate-500 leading-relaxed">14 tahun di dunia marketing baik media
+                        entertainment maupun IT solusi. 7 tahun++ di dunia IT dan aktif dalam perkembangan UMKM di
+                        Indonesia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUES SECTION -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span
+                    class="inline-block px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-3">
+                    Nilai Kami
+                </span>
+                <h2 class="text-3xl font-extrabold text-slate-900">
+                    Nilai Utama Layanan Kami
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-emerald-50 flex items-center justify-center mb-6 text-emerald-600 text-2xl">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">DATA AMAN</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Data dijamin AMAN. Kami menerima data non kritikal
+                        dan akses ke level admin. Data akan kami hapus ketika pekerjaan sudah selesai sepenuhnya.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-emerald-50 flex items-center justify-center mb-6 text-emerald-600 text-2xl">
+                        <i class="bi bi-currency-dollar"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">HARGA TERJANGKAU</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Ekonomis dan Sesuai Budget. Anda dapat
+                        memaksimalkan serta menyesuaikan perencanaan pengeluaran sesuai dengan skala budget yang Anda
+                        inginkan.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-emerald-50 flex items-center justify-center mb-6 text-emerald-600 text-2xl">
+                        <i class="bi bi-palette"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">DESAIN FLEKSIBEL</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">Sesuai Request. Tampilan situs web dapat
+                        disesuaikan sepenuhnya dengan permintaan dari Anda secara kostumisasi penuh.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 pt-16 pb-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+            <div class="space-y-4">
+                <img src="./asset/logo.png" alt="Logo Footer" class="h-10 w-auto brightness-0 invert">
+                <p class="text-sm leading-relaxed text-slate-400">Kami menyediakan solusi digital terbaik untuk membantu
+                    bisnis dan UMKM berkembang lebih cepat di era digital modern saat ini.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold text-sm tracking-wider uppercase mb-4">Informasi</h4>
+                <ul class="space-y-2.5 text-sm">
+                    <li><a href="about.html" class="hover:text-white transition-colors">Tentang Kami</a></li>
+                    <li><a href="store.html" class="hover:text-white transition-colors">Toko</a></li>
+                    <li><a href="news.html" class="hover:text-white transition-colors">Artikel</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition-colors">Kontak</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold text-sm tracking-wider uppercase mb-4">Layanan & Kategori</h4>
+                <ul class="space-y-2.5 text-sm">
+                    <li><a href="store.html?category=Lapis%20Talas%20Bogor"
+                            class="hover:text-white transition-colors">Lapis Talas Bogor</a></li>
+                    <li><a href="store.html?category=Bolu%20Susu%20Madu" class="hover:text-white transition-colors">Bolu
+                            Susu Madu</a></li>
+                    <li><a href="store.html?category=Pie%20Susu" class="hover:text-white transition-colors">Pie Susu
+                            Lembang</a></li>
+                    <li><a href="store.html?category=Bakpia%20Khas%20Jogja"
+                            class="hover:text-white transition-colors">Bakpia Khas Jogja</a></li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h4 class="text-white font-semibold text-sm tracking-wider uppercase mb-3">Get In Touch</h4>
+                <ul class="space-y-2.5 text-sm">
+                    <li class="flex items-start gap-3">
+                        <i class="bi bi-geo-alt text-emerald-500 mt-0.5"></i>
+                        <span>Jl. Jalur Utama No. 123, Tangerang, Banten</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="bi bi-whatsapp text-emerald-500"></i>
+                        <a href="https://wa.me/6287885038485" target="_blank"
+                            class="hover:text-white transition-colors">+62 878-8503-8485</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="bi bi-envelope text-emerald-500"></i>
+                        <a href="mailto:info@perusahaan.com"
+                            class="hover:text-white transition-colors">info@perusahaan.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-slate-800 text-sm text-center md:text-left flex flex-col md:flex-row justify-between gap-4">
+            <p>Â© 2026 Geka Store. All rights reserved.</p>
+            <p class="text-xs text-slate-500">Designed with Plus Jakarta Sans & Tailwind</p>
+        </div>
+    </footer>
+
+    <!-- FLOATING WA BUTTON -->
+    <a href="https://wa.me/6287885038485" target="_blank"
+        class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-emerald-500 text-white rounded-full shadow-lg hover:bg-emerald-600 transition-all duration-300 group hover:scale-110"
+        aria-label="Chat via WhatsApp">
+        <span class="absolute inset-0 rounded-full bg-emerald-500/40 animate-ping group-hover:animate-none"></span>
+        <i class="bi bi-whatsapp text-2xl relative z-10"></i>
+    </a>
+
+    <!-- SCRIPT -->
+    <script>
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('main-navbar');
+            const logo = document.getElementById('navbar-logo');
+            if (window.scrollY > 50) {
+                navbar.classList.remove('h-24', 'bg-white/80');
+                navbar.classList.add('h-16', 'bg-white/95', 'shadow-md', 'shadow-slate-100/50');
+                logo.classList.remove('h-12');
+                logo.classList.add('h-8');
+            } else {
+                navbar.classList.remove('h-16', 'bg-white/95', 'shadow-md', 'shadow-slate-100/50');
+                navbar.classList.add('h-24', 'bg-white/80');
+                logo.classList.remove('h-8');
+                logo.classList.add('h-12');
+            }
+        });
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const sidebarMenu = document.getElementById('sidebar-menu');
+        const sidebarBackdrop = document.getElementById('sidebar-backdrop');
+        const sidebarPanel = document.getElementById('sidebar-panel');
+
+        function openMenu() {
+            sidebarMenu.classList.remove('invisible');
+            setTimeout(() => {
+                sidebarBackdrop.classList.remove('opacity-0');
+                sidebarPanel.classList.remove('translate-x-full');
+            }, 10);
+        }
+
+        function closeMenu() {
+            sidebarBackdrop.classList.add('opacity-0');
+            sidebarPanel.classList.add('translate-x-full');
+            setTimeout(() => {
+                sidebarMenu.classList.add('invisible');
+            }, 300);
+        }
+
+        if (menuToggle) menuToggle.addEventListener('click', openMenu);
+        if (menuClose) menuClose.addEventListener('click', closeMenu);
+        if (sidebarBackdrop) sidebarBackdrop.addEventListener('click', closeMenu);
+    </script>
+</body>
+
+</html>
