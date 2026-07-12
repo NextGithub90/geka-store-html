@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 
 <head>
@@ -158,11 +158,21 @@
                 class="inline-flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-slate-800 transition-colors mb-6">
                 <i class="bi bi-arrow-left"></i> KEMBALI KE KATEGORI
             </button>
-            <div class="bg-white border border-slate-100 rounded-2xl p-6 mb-8">
-                <span class="text-xs font-extrabold tracking-widest text-slate-800 uppercase">Katalog Filtered</span>
-                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">Kategori: <span
-                        id="active-category-title" class="text-slate-800"></span></h2>
-                <p class="text-slate-400 text-sm mt-1">Menampilkan semua koleksi produk terbaik dalam kategori ini.</p>
+            <div class="bg-white border border-slate-100 rounded-2xl p-6 mb-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                <div>
+                    <span class="text-xs font-extrabold tracking-widest text-slate-800 uppercase">Katalog Filtered</span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">Kategori: <span
+                            id="active-category-title" class="text-slate-800"></span></h2>
+                    <p class="text-slate-400 text-sm mt-1">Menampilkan semua koleksi produk terbaik dalam kategori ini.</p>
+                </div>
+                <div class="w-full md:w-72 shrink-0">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Cari Produk</h4>
+                    <div class="relative">
+                        <i class="bi bi-search absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input id="cat-search-input" type="text" placeholder="Cari varian rasa..."
+                            class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm text-slate-800 focus:outline-none focus:border-slate-800 transition-colors">
+                    </div>
+                </div>
             </div>
             <div id="products-grid" class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"></div>
         </div>
@@ -271,38 +281,74 @@
         });
 
         // ---- SHOW PRODUCTS ----
+        let activeCategoryObj = null;
+
+        const catSearchInput = document.getElementById('cat-search-input');
+        if(catSearchInput) {
+            catSearchInput.addEventListener('input', (e) => {
+                if (activeCategoryObj) {
+                    renderCategoryGrid(activeCategoryObj, e.target.value);
+                }
+            });
+        }
+
+        function renderCategoryGrid(cat, query) {
+            const grid = document.getElementById('products-grid');
+            let list = cat.products;
+            
+            if (query.trim() !== '') {
+                const lowerQ = query.toLowerCase();
+                list = list.filter(p => p.name.toLowerCase().includes(lowerQ) || p.description.toLowerCase().includes(lowerQ));
+            }
+            
+            if (list.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12 bg-white rounded-2xl border border-slate-100 flex flex-col items-center justify-center">
+                        <i class="bi bi-inbox text-4xl text-slate-300 mb-2"></i>
+                        <p class="text-slate-500 font-bold">Produk tidak ditemukan.</p>
+                        <p class="text-slate-400 text-xs mt-1">Coba kata kunci lain pada kategori ini.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = list.map(p => {
+                return `
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-slate-100 flex flex-col group p-3 sm:p-4">
+                        <div class="aspect-square w-full bg-slate-100 rounded-xl overflow-hidden mb-3">
+                            <img src="${p.images[0]}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-xs sm:text-sm line-clamp-2 leading-snug mb-1">${p.name}</h3>
+                        <p class="text-[10px] sm:text-[11px] text-slate-400 line-clamp-2 mb-3 flex-1">${p.description}</p>
+                        <div class="flex items-center justify-between flex-wrap gap-1 mb-2">
+                            <span class="text-sm font-extrabold text-slate-900">${formatPrice(p.price)}</span>
+                            <span class="text-[9px] text-slate-400 font-medium">Stok: ${p.stock}</span>
+                        </div>
+                        <div class="mt-2">
+                            <a href="product-detail.html?id=${p.id}" class="w-full inline-flex items-center justify-center gap-1 border border-slate-200 hover:bg-slate-50 text-slate-700 text-[10px] sm:text-xs font-bold py-2 rounded-xl transition-colors">
+                                <i class="bi bi-info-circle"></i> Detail Lengkap
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
         function showProducts(categoryName) {
             const cat = categories.find(c => c.name === categoryName);
             if (!cat) return;
+            
+            activeCategoryObj = cat;
+            
             document.getElementById('view-categories').classList.add('hidden');
             document.getElementById('view-products').classList.remove('hidden');
             document.getElementById('active-category-title').textContent = cat.name;
+            
+            if(catSearchInput) catSearchInput.value = '';
+            
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            const grid = document.getElementById('products-grid');
-            grid.innerHTML = '';
-            cat.products.forEach(p => {
-                const waMsg = encodeURIComponent(`Halo Admin, saya tertarik memesan ${p.name}`);
-                const card = document.createElement('div');
-                card.className = 'bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-slate-100 flex flex-col group p-3 sm:p-4';
-                card.innerHTML = `
-                    <div class="aspect-square w-full bg-slate-100 rounded-xl overflow-hidden mb-3">
-                        <img src="${p.images[0]}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <h3 class="font-bold text-slate-800 text-xs sm:text-sm line-clamp-2 leading-snug mb-1">${p.name}</h3>
-                    <p class="text-[10px] sm:text-[11px] text-slate-400 line-clamp-2 mb-3 flex-1">${p.description}</p>
-                    <div class="flex items-center justify-between flex-wrap gap-1 mb-2">
-                        <span class="text-sm font-extrabold text-slate-900">${formatPrice(p.price)}</span>
-                        <span class="text-[9px] text-slate-400 font-medium">Stok: ${p.stock}</span>
-                    </div>
-                    <div class="mt-2">
-                        <a href="product-detail.html?id=${p.id}" class="w-full inline-flex items-center justify-center gap-1 border border-slate-200 hover:bg-slate-50 text-slate-700 text-[10px] sm:text-xs font-bold py-2 rounded-xl transition-colors">
-                            <i class="bi bi-info-circle"></i> Detail Lengkap
-                        </a>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
+            renderCategoryGrid(cat, '');
 
             // Update URL without reload
             const url = new URL(window.location);
