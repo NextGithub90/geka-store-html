@@ -8,7 +8,7 @@
     <meta name="description"
         content="Jelajahi katalog lengkap Bolu Susu Khas Lembang, Lapis Talas Bogor, Pie Susu, dan berbagai oleh-oleh favorit lainnya.">
     <link rel="shortcut icon" href="./asset/logo.png?v=2" type="image/png">
-    <script src="https://cdn.tailwindcss.com"></script>`r`n
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="./products-data.js"></script>
     <script src="./cart.js"></script>
     <script>
@@ -59,7 +59,7 @@
                     </a>
                 </div>
 
-                                <nav class="hidden md:flex space-x-8 items-center text-sm font-semibold text-slate-600">
+                <nav class="hidden md:flex space-x-8 items-center text-sm font-semibold text-slate-600">
                     <a href="index.html" class="hover:text-slate-800 transition-colors duration-200">Home</a>
                     <a href="about.html" class="hover:text-slate-800 transition-colors duration-200">About</a>
                     <a href="store.html" class="text-slate-800 font-bold transition-colors duration-200">Sale</a>
@@ -68,24 +68,26 @@
                         <a href="cart.html"
                             class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-600 relative hover:bg-slate-100 hover:text-slate-800 transition-all"
                             title="Keranjang"><i class="bi bi-bag text-base"></i>
-                            <span class="cart-badge absolute -top-1.5 -right-1.5 bg-slate-800 text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold px-1 min-w-[18px]">0</span>
+                            <span
+                                class="cart-badge absolute -top-1.5 -right-1.5 bg-slate-800 text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold px-1 min-w-[18px]">0</span>
                         </a>
                     </div>
                 </nav>
 
-                            <div class="flex md:hidden items-center gap-3">
-                <a href="cart.html"
-                    class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-600 relative hover:bg-slate-100 transition-all"
-                    title="Keranjang"><i class="bi bi-bag text-base"></i>
-                    <span class="cart-badge absolute -top-1.5 -right-1.5 bg-slate-800 text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold px-1 min-w-[18px]">0</span>
-                </a>
-                <button id="menu-toggle" type="button"
-                    class="w-10 h-10 flex items-center justify-center rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-slate-800 hover:border-slate-300 transition-all focus:outline-none shadow-sm"
-                    aria-label="Toggle menu">
-                    <i class="bi bi-list text-xl"></i>
-                </button>
+                <div class="flex md:hidden items-center gap-3">
+                    <a href="cart.html"
+                        class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-600 relative hover:bg-slate-100 transition-all"
+                        title="Keranjang"><i class="bi bi-bag text-base"></i>
+                        <span
+                            class="cart-badge absolute -top-1.5 -right-1.5 bg-slate-800 text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold px-1 min-w-[18px]">0</span>
+                    </a>
+                    <button id="menu-toggle" type="button"
+                        class="w-10 h-10 flex items-center justify-center rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-slate-800 hover:border-slate-300 transition-all focus:outline-none shadow-sm"
+                        aria-label="Toggle menu">
+                        <i class="bi bi-list text-xl"></i>
+                    </button>
+                </div>
             </div>
-        </div>
     </header>
 
     <!-- Mobile Sidebar Drawer (Placed outside header to avoid backdrop-filter containing block trap) -->
@@ -96,7 +98,7 @@
         </div>
         <!-- Drawer Panel -->
         <div id="sidebar-panel"
-            class="absolute inset-y-0 right-0 max-w-xs w-80 bg-white shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out pointer-events-auto">
+            class="absolute inset-y-0 left-0 max-w-xs w-80 bg-white shadow-2xl flex flex-col transform -translate-x-full transition-transform duration-300 ease-in-out pointer-events-auto">
             <!-- Drawer Header -->
             <div class="px-6 py-5 flex items-center justify-between border-b border-slate-100 bg-slate-50/50">
                 <a href="index.html" class="flex items-center gap-2">
@@ -109,73 +111,33 @@
                 </button>
             </div>
             <!-- Drawer Links -->
-                        <div class="px-5 py-6 space-y-1.5 flex-1 overflow-y-auto font-semibold text-slate-700">
-                <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 px-3 mb-2">Menu Navigasi</div>
-                <a href="index.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all"><i class="bi bi-house-door text-lg"></i><span>Home</span></a>
-                <a href="about.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all"><i class="bi bi-info-circle text-lg"></i><span>About</span></a>
-                <a href="store.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl bg-slate-100 text-slate-800 font-bold transition-all"><i class="bi bi-shop text-lg"></i><span>Sale</span></a>
-                <a href="category.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all"><i class="bi bi-grid text-lg"></i><span>Category</span></a>
-            </div>
+            <div class="px-5 py-6 space-y-1.5 flex-1 overflow-y-auto font-semibold text-slate-700">
+                <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 px-3 mb-2">Menu Navigasi
+                </div>
                 <a href="index.html"
-                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all">
-                    <i class="bi bi-house-door text-lg"></i>
-                    <span>Home</span>
-                </a>
+                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all"><i
+                        class="bi bi-house-door text-lg"></i><span>Home</span></a>
                 <a href="about.html"
-                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all">
-                    <i class="bi bi-info-circle text-lg"></i>
-                    <span>About</span>
-                </a>
+                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all"><i
+                        class="bi bi-info-circle text-lg"></i><span>About</span></a>
                 <a href="store.html"
-                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl bg-slate-100 text-slate-800 font-bold transition-all">
-                    <i class="bi bi-shop text-lg"></i>
-                    <span>Store</span>
-                </a>
-                <a href="store.html"
-                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all">
-                    <i class="bi bi-grid text-lg"></i>
-                    <span>Category</span>
-                </a>
-                <a href="news.html"
-                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all">
-                    <i class="bi bi-newspaper text-lg"></i>
-                    <span>Articles</span>
-                </a>
-                <a href="contact.html"
-                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all">
-                    <i class="bi bi-envelope text-lg"></i>
-                    <span>Contact</span>
-                </a>
+                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl bg-slate-100 text-slate-800 font-bold transition-all"><i
+                        class="bi bi-shop text-lg"></i><span>Sale</span></a>
+                <a href="category.html"
+                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all"><i
+                        class="bi bi-grid text-lg"></i><span>Category</span></a>
             </div>
             <!-- Drawer Footer CTA -->
             <div class="p-5 border-t border-slate-100 bg-slate-50/80 space-y-3">
-                <a href="https://wa.me/6287885038485" target="_blank"
+                <a href="https://wa.me/6287789172727" target="_blank"
                     class="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-900 text-white font-bold text-sm shadow-md shadow-slate-800/20 transition-all">
                     <i class="bi bi-whatsapp text-base"></i>
                     <span>Chat WhatsApp</span>
                 </a>
-                <p class="text-[11px] text-center text-slate-400">Â© 2026 Geka Store</p>
+                <p class="text-[11px] text-center text-slate-400">&copy; 2026 Geka Store</p>
             </div>
         </div>
     </div>
-
-    <!-- PAGE HEADER -->
-    <div class="bg-white border-b border-slate-200 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <span
-                class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-bold bg-slate-100 text-slate-800 border border-slate-200 mb-3">
-                Katalog Lengkap
-            </span>
-            <h1 class="text-3xl sm:text-4xl font-black text-slate-900">
-                Semua Produk Bolu Susu Lembang
-            </h1>
-            <p class="text-slate-500 text-sm sm:text-base mt-2">
-                Pilih varian rasa favorit Anda dari koleksi lengkap kami.
-            </p>
-        </div>
-    </div>
-
-    <!-- MAIN CONTENT -->
     <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
             <!-- Sidebar Filter (Sticky only on large desktop screens lg:sticky lg:top-28) -->
@@ -406,9 +368,8 @@
                                     <div class="text-xs sm:text-sm font-extrabold text-slate-900">Rp ${p.price.toLocaleString('id-ID')}</div>
                                     <span class="text-[9px] text-slate-400 font-medium">Stok: ${p.stock}</span>
                                 </div>
-                                <div class="grid grid-cols-2 gap-2 mt-3">
-                                    <a href="product-detail.html?id=${p.id}" class="inline-flex items-center justify-center gap-1 border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 text-[10px] sm:text-xs font-bold py-2 px-1 rounded-xl transition-colors"><i class="bi bi-info-circle"></i> Detail</a>
-                                    <a href="https://wa.me/6287885038485?text=${waText}" target="_blank" class="inline-flex items-center justify-center gap-1 bg-slate-800 hover:bg-slate-900 text-white text-[10px] sm:text-xs font-bold py-2 px-1 rounded-xl transition-colors shadow-sm shadow-slate-300"><i class="bi bi-whatsapp"></i> Chat</a>
+                                <div class="mt-3">
+                                    <a href="product-detail.html?id=${p.id}" class="w-full inline-flex items-center justify-center gap-1 border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 text-[10px] sm:text-xs font-bold py-2 px-1 rounded-xl transition-colors"><i class="bi bi-info-circle"></i> Detail Lengkap</a>
                                 </div>
                             </div>
                         </div>
@@ -472,13 +433,13 @@
             sidebarMenu.classList.remove('invisible');
             setTimeout(() => {
                 sidebarBackdrop.classList.remove('opacity-0');
-                sidebarPanel.classList.remove('translate-x-full');
+                sidebarPanel.classList.remove('-translate-x-full');
             }, 10);
         }
 
         function closeMenu() {
             sidebarBackdrop.classList.add('opacity-0');
-            sidebarPanel.classList.add('translate-x-full');
+            sidebarPanel.classList.add('-translate-x-full');
             setTimeout(() => {
                 sidebarMenu.classList.add('invisible');
             }, 300);

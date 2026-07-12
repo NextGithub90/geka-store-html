@@ -21,7 +21,7 @@ const PRODUCTS = [
         description: 'Bolu Lapis Talas Bogor Original hadir dengan tekstur lembut dan padat yang khas. Dibuat dari talas pilihan asli Bogor yang menghadirkan aroma dan cita rasa autentik di setiap lapisannya.',
         specs: { berat: '300g', ukuran: '20x10x8 cm', ketahanan: '3 hari suhu ruang / 7 hari kulkas', varian: ['Original', 'Keju', 'Brownies'] },
         tags: ['oleh-oleh', 'bogor', 'lapis', 'talas'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     {
         id: 'lapis-talas-brownies',
@@ -37,7 +37,7 @@ const PRODUCTS = [
         description: 'Perpaduan sempurna antara lapis talas lembut khas Bogor dengan kekayaan rasa cokelat brownies. Menghadirkan sensasi dua cita rasa dalam satu gigitan yang lezat.',
         specs: { berat: '300g', ukuran: '20x10x8 cm', ketahanan: '3 hari suhu ruang', varian: ['Brownies', 'Brownies Keju'] },
         tags: ['oleh-oleh', 'brownies', 'coklat'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     {
         id: 'lapis-talas-keju',
@@ -53,7 +53,7 @@ const PRODUCTS = [
         description: 'Lapis talas dengan taburan keju cheddar melimpah yang gurih dan menggugah selera. Perpaduan manis talas dan gurihnya keju menciptakan harmoni rasa yang sempurna.',
         specs: { berat: '320g', ukuran: '20x10x8 cm', ketahanan: '3 hari suhu ruang', varian: ['Keju Cheddar', 'Keju Mozarella'] },
         tags: ['keju', 'gurih', 'lapis'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     {
         id: 'lapis-talas-full',
@@ -69,7 +69,7 @@ const PRODUCTS = [
         description: 'Versi full talas dengan komposisi talas yang lebih banyak, menghasilkan tekstur lebih padat dan aroma talas yang lebih kuat dan autentik.',
         specs: { berat: '350g', ukuran: '20x10x8 cm', ketahanan: '3 hari suhu ruang', varian: ['Full Talas'] },
         tags: ['full talas', 'padat', 'autentik'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     // ---- BOLU SUSU MADU ----
     {
@@ -86,7 +86,7 @@ const PRODUCTS = [
         description: 'Bolu Susu Madu varian coklat hadir dengan perpaduan kelembutan bolu susu dan manisnya madu pilihan yang berpadu dalam alunan rasa coklat premium.',
         specs: { berat: '250g', ukuran: '15x10x6 cm', ketahanan: '5 hari suhu ruang', varian: ['Coklat', 'Coklat Keju'] },
         tags: ['coklat', 'madu', 'bolu'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     {
         id: 'bolu-susu-madu-vanila',
@@ -102,7 +102,7 @@ const PRODUCTS = [
         description: 'Bolu Susu Madu varian vanila dengan aroma vanilla yang harum dan lembut. Paduan sempurna antara kelembutan bolu dan manisnya madu asli.',
         specs: { berat: '250g', ukuran: '15x10x6 cm', ketahanan: '5 hari suhu ruang', varian: ['Vanila', 'Vanila Keju'] },
         tags: ['vanila', 'madu', 'lembut'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     {
         id: 'bolu-susu-madu-avocado',
@@ -118,7 +118,7 @@ const PRODUCTS = [
         description: 'Bolu susu khas Lembang dengan sentuhan alpukat segar. Rasa creamy alpukat yang khas berpadu dengan kelembutan bolu dan aroma harum susu Lembang.',
         specs: { berat: '260g', ukuran: '15x10x6 cm', ketahanan: '3 hari suhu ruang', varian: ['Alpukat', 'Alpukat Madu'] },
         tags: ['alpukat', 'creamy', 'lembang'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     // ---- PIE SUSU ----
     {
@@ -135,7 +135,7 @@ const PRODUCTS = [
         description: 'Pie susu khas Lembang dengan kulit pie renyah dan isian susu yang manis, creamy, dan lembut. Perpaduan tekstur yang memukau di setiap suapan.',
         specs: { berat: '200g', ukuran: 'Isi 10 pcs', ketahanan: '2 hari suhu ruang', varian: ['Original', 'Keju', 'Coklat'] },
         tags: ['pie', 'susu', 'renyah'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     // ---- BOLU SUSU ----
     {
@@ -152,7 +152,7 @@ const PRODUCTS = [
         description: 'Bolu susu lembut khas Lembang dengan rasa susu autentik yang kaya. Dibuat dari susu sapi pilihan Lembang yang memberikan cita rasa unik dan lembut.',
         specs: { berat: '220g', ukuran: '18x8x6 cm', ketahanan: '4 hari suhu ruang', varian: ['Original', 'Keju', 'Coklat', 'Pandan'] },
         tags: ['bolu', 'susu', 'lembang'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     {
         id: 'bolu-susu-keju',
@@ -168,7 +168,7 @@ const PRODUCTS = [
         description: 'Bolu susu Lembang dengan taburan keju cheddar premium yang melimpah. Gurihnya keju berpadu sempurna dengan kelembutan bolu susu yang autentik.',
         specs: { berat: '240g', ukuran: '18x8x6 cm', ketahanan: '4 hari suhu ruang', varian: ['Keju Cheddar', 'Triple Keju'] },
         tags: ['keju', 'gurih', 'premium'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     // ---- BAKPIA ----
     {
@@ -185,7 +185,7 @@ const PRODUCTS = [
         description: 'Bakpia pathok khas Jogja dengan isian kacang hijau yang legit, lembut, dan tidak terlalu manis. Kulit tipis renyah dengan tekstur isian yang padat berkualitas.',
         specs: { berat: '350g', ukuran: 'Isi 20 pcs', ketahanan: '5 hari suhu ruang', varian: ['Kacang Hijau', 'Coklat', 'Keju', 'Durian'] },
         tags: ['bakpia', 'jogja', 'oleh-oleh'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     // ---- TIRAMISU ----
     {
@@ -202,7 +202,7 @@ const PRODUCTS = [
         description: 'Tiramisu premium dengan lapisan coklat ganache yang lumer dan creamy. Perpaduan kopi, coklat, dan mascarpone pilihan menghadirkan pengalaman dessert kelas atas.',
         specs: { berat: '400g', ukuran: '20x15x6 cm', ketahanan: '3 hari kulkas', varian: ['Original', 'Matcha', 'Strawberry'] },
         tags: ['tiramisu', 'premium', 'lumer'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     // ============================================
     // ---- WOMEN CATEGORY ----
@@ -227,7 +227,7 @@ const PRODUCTS = [
         tags: ['dress', 'floral', 'maxi', 'wanita'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         colors: ['Floral Pink', 'Floral Blue', 'Floral Green'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     {
         id: 'women-blouse-casual',
@@ -249,7 +249,7 @@ const PRODUCTS = [
         tags: ['blouse', 'linen', 'kasual', 'wanita'],
         sizes: ['S', 'M', 'L', 'XL'],
         colors: ['White', 'Cream', 'Light Blue', 'Sage Green'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     {
         id: 'women-knit-cardigan',
@@ -270,7 +270,7 @@ const PRODUCTS = [
         tags: ['cardigan', 'knit', 'oversize', 'outer'],
         sizes: ['Free Size'],
         colors: ['Cream', 'Brown', 'Grey', 'Olive'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     {
         id: 'women-highwaist-pants',
@@ -291,7 +291,7 @@ const PRODUCTS = [
         tags: ['celana', 'high waist', 'wide leg', 'trendi'],
         sizes: ['XS', 'S', 'M', 'L', 'XL'],
         colors: ['Black', 'Cream', 'Navy', 'Camel'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     {
         id: 'women-sneakers-white',
@@ -313,7 +313,7 @@ const PRODUCTS = [
         tags: ['sneakers', 'putih', 'kasual', 'sepatu'],
         sizes: ['36', '37', '38', '39', '40'],
         colors: ['White', 'White/Black'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     {
         id: 'women-heels-black',
@@ -334,7 +334,7 @@ const PRODUCTS = [
         tags: ['heels', 'formal', 'elegan', 'sepatu'],
         sizes: ['36', '37', '38', '39', '40'],
         colors: ['Black', 'Nude', 'Brown'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     {
         id: 'women-sandal-platform',
@@ -355,7 +355,7 @@ const PRODUCTS = [
         tags: ['sandal', 'platform', 'trendi'],
         sizes: ['36', '37', '38', '39', '40'],
         colors: ['Black', 'Tan', 'White'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     {
         id: 'women-loafer-slip',
@@ -376,7 +376,7 @@ const PRODUCTS = [
         tags: ['loafer', 'slip-on', 'kasual'],
         sizes: ['36', '37', '38', '39', '40'],
         colors: ['Black', 'Tan', 'Burgundy'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     // ============================================
     // ---- MEN CATEGORY ----
@@ -400,7 +400,7 @@ const PRODUCTS = [
         tags: ['polo', 'pria', 'cotton', 'smart casual'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         colors: ['Navy', 'White', 'Black', 'Grey', 'Maroon'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     {
         id: 'men-oxford-shirt',
@@ -421,7 +421,7 @@ const PRODUCTS = [
         tags: ['kemeja', 'oxford', 'formal', 'pria'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         colors: ['White', 'Light Blue', 'Grey', 'Pink Pastel'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     {
         id: 'men-jogger-pants',
@@ -442,7 +442,7 @@ const PRODUCTS = [
         tags: ['jogger', 'celana', 'sporty', 'pria'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         colors: ['Black', 'Grey', 'Olive', 'Navy'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     {
         id: 'men-hoodie-fleece',
@@ -463,7 +463,7 @@ const PRODUCTS = [
         tags: ['hoodie', 'fleece', 'hangat', 'premium'],
         sizes: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
         colors: ['Black', 'Grey', 'Navy', 'Maroon'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     {
         id: 'men-sneakers-running',
@@ -484,7 +484,7 @@ const PRODUCTS = [
         tags: ['sneakers', 'running', 'sport', 'pria'],
         sizes: ['39', '40', '41', '42', '43', '44'],
         colors: ['Black/Red', 'White/Blue', 'Grey/Orange'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     {
         id: 'men-oxford-shoe',
@@ -505,7 +505,7 @@ const PRODUCTS = [
         tags: ['oxford', 'formal', 'kulit', 'elegan'],
         sizes: ['39', '40', '41', '42', '43', '44'],
         colors: ['Black', 'Dark Brown', 'Tan'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     {
         id: 'men-slip-on-loafer',
@@ -526,7 +526,7 @@ const PRODUCTS = [
         tags: ['loafer', 'kasual', 'slip-on'],
         sizes: ['39', '40', '41', '42', '43', '44'],
         colors: ['Brown', 'Navy', 'Grey'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
     {
         id: 'men-boots-ankle',
@@ -547,7 +547,7 @@ const PRODUCTS = [
         tags: ['boots', 'ankle', 'kulit', 'maskulin'],
         sizes: ['39', '40', '41', '42', '43', '44'],
         colors: ['Black', 'Dark Brown'],
-        waNumber: '6287885038485'
+        waNumber: '6287789172727'
     },
 ];
 

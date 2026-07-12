@@ -88,14 +88,13 @@
     </header>
 
     <!-- Mobile Sidebar Drawer (Placed outside header to avoid backdrop-filter containing block trap) -->
-    <div id="sidebar-menu" class="fixed inset-0 z-[100] pointer-events-none invisible transition-all duration-300">
+        <div id="sidebar-menu" class="fixed inset-0 z-[100] pointer-events-none invisible transition-all duration-300">
         <!-- Backdrop -->
         <div id="sidebar-backdrop"
             class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm opacity-0 transition-opacity duration-300 ease-in-out">
         </div>
         <!-- Drawer Panel -->
-        <div id="sidebar-panel"
-            class="absolute inset-y-0 right-0 max-w-xs w-80 bg-white shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out pointer-events-auto">
+        <div id="sidebar-panel" class="absolute inset-y-0 left-0 max-w-xs w-80 bg-white shadow-2xl flex flex-col transform -translate-x-full transition-transform duration-300 ease-in-out pointer-events-auto">
             <!-- Drawer Header -->
             <div class="px-6 py-5 flex items-center justify-between border-b border-slate-100 bg-slate-50/50">
                 <a href="index.html" class="flex items-center gap-2">
@@ -108,57 +107,24 @@
                 </button>
             </div>
             <!-- Drawer Links -->
-                        <div class="px-5 py-6 space-y-1.5 flex-1 overflow-y-auto font-semibold text-slate-700">
+            <div class="px-5 py-6 space-y-1.5 flex-1 overflow-y-auto font-semibold text-slate-700">
                 <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 px-3 mb-2">Menu Navigasi</div>
                 <a href="index.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all"><i class="bi bi-house-door text-lg"></i><span>Home</span></a>
                 <a href="about.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl bg-slate-100 text-slate-800 font-bold transition-all"><i class="bi bi-info-circle text-lg"></i><span>About</span></a>
                 <a href="store.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all"><i class="bi bi-shop text-lg"></i><span>Sale</span></a>
                 <a href="category.html" class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all"><i class="bi bi-grid text-lg"></i><span>Category</span></a>
-            </div>
-                <a href="index.html"
-                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all">
-                    <i class="bi bi-house-door text-lg"></i>
-                    <span>Home</span>
-                </a>
-                <a href="about.html"
-                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl bg-slate-100 text-slate-800 font-bold transition-all">
-                    <i class="bi bi-info-circle text-lg"></i>
-                    <span>About</span>
-                </a>
-                <a href="store.html"
-                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all">
-                    <i class="bi bi-shop text-lg"></i>
-                    <span>Store</span>
-                </a>
-                <a href="store.html"
-                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all">
-                    <i class="bi bi-grid text-lg"></i>
-                    <span>Category</span>
-                </a>
-                <a href="news.html"
-                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all">
-                    <i class="bi bi-newspaper text-lg"></i>
-                    <span>Articles</span>
-                </a>
-                <a href="contact.html"
-                    class="flex items-center gap-3.5 px-4 py-3 rounded-xl hover:bg-slate-50 hover:text-slate-800 transition-all">
-                    <i class="bi bi-envelope text-lg"></i>
-                    <span>Contact</span>
-                </a>
-            </div>
+                </div>
             <!-- Drawer Footer CTA -->
             <div class="p-5 border-t border-slate-100 bg-slate-50/80 space-y-3">
-                <a href="https://wa.me/6287885038485" target="_blank"
+                <a href="https://wa.me/6287789172727" target="_blank"
                     class="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-900 text-white font-bold text-sm shadow-md shadow-slate-800/20 transition-all">
                     <i class="bi bi-whatsapp text-base"></i>
                     <span>Chat WhatsApp</span>
                 </a>
-                <p class="text-[11px] text-center text-slate-400">Â© 2026 Geka Store</p>
+                <p class="text-[11px] text-center text-slate-400">&copy; 2026 Geka Store</p>
             </div>
         </div>
-    </div>
-
-    <!-- ABOUT HERO -->
+    </div><!-- ABOUT HERO -->
     <section class="bg-white border-b border-slate-200 py-16 sm:py-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span
@@ -409,13 +375,13 @@
             sidebarMenu.classList.remove('invisible');
             setTimeout(() => {
                 sidebarBackdrop.classList.remove('opacity-0');
-                sidebarPanel.classList.remove('translate-x-full');
+                sidebarPanel.classList.remove('-translate-x-full');
             }, 10);
         }
 
         function closeMenu() {
             sidebarBackdrop.classList.add('opacity-0');
-            sidebarPanel.classList.add('translate-x-full');
+            sidebarPanel.classList.add('-translate-x-full');
             setTimeout(() => {
                 sidebarMenu.classList.add('invisible');
             }, 300);
@@ -428,3 +394,6 @@
 </body>
 
 </html>
+
+
+
