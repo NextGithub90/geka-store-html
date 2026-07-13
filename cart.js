@@ -1,5 +1,5 @@
-﻿/* =============================================
-   GEKA STORE — cart.js (Cart Logic)
+/* =============================================
+   TENNIS SPACE LAB — cart.js (Cart Logic)
    ============================================= */
 
 const CART_STORAGE_KEY = 'geka_store_cart';

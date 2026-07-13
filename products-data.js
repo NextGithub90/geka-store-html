@@ -1,5 +1,5 @@
-﻿// =============================================
-// GEKA STORE - CENTRALIZED PRODUCT DATA
+// =============================================
+// TENNIS SPACE LAB - CENTRALIZED PRODUCT DATA
 // =============================================
 const PRODUCTS = [
     // ---- LAPIS TALAS BOGOR ----

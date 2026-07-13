@@ -1,5 +1,5 @@
 /* =============================================
-   GEKA STORE — main.js (Shared JavaScript)
+   TENNIS SPACE LAB — main.js (Shared JavaScript)
    ============================================= */
 
 (function () {
